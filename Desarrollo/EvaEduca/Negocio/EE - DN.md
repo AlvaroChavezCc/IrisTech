@@ -36,37 +36,35 @@
 **Tabla de Contenidos**
 
 
-[**1. Introducción**	](#_heading=h.1fob9te)**4****
+[1. Introducción](#_heading=h.1fob9te)
 
-[1.1 Propósito	](#_heading=h.x8dev0qcgdzp)4
+[1.1 Propósito](#_heading=h.x8dev0qcgdzp)
 
-[1.2 Glosario	](#_heading=h.3gbxxmgeo82g)4
+[1.2 Glosario](#_heading=h.3gbxxmgeo82g)
 
-[**2. Procesos:**	](#_heading=h.jj2frwdq33g0)**4**
+[2. Proceso: Gestión de Cuentas de Usuario.](#_heading=h.kfcda8hp97gl)
 
-[2.1 Proceso: Gestión de Cuentas de Usuario.	](#_heading=h.kfcda8hp97gl)5
+[2.1 Ficha de Proceso](#_heading=h.xaqw1xosv3l)
 
-[2.1.1 Ficha de Proceso	](#_heading=h.xaqw1xosv3l)5
+[2.2 Diagrama del Proceso](#_heading=h.n30edv4xm67l)
 
-[2.1.2 Diagrama del Proceso	](#_heading=h.n30edv4xm67l)6
+[2.3 Descripción de Actividades](#_heading=h.a7vbej849lv3)
 
-[2.1.3 Descripción de Actividades	](#_heading=h.a7vbej849lv3)7
+[3. Proceso: Gestión de Evaluación](#_heading=h.xi9ef7x2o3mu)
 
-[2.2 Proceso: Gestión de Evaluación	](#_heading=h.xi9ef7x2o3mu)8
+[3.1 Ficha de Proceso](#_heading=h.17dp8vu)
 
-[2.2.1 Ficha de Proceso	](#_heading=h.17dp8vu)8
+[3.2 Diagrama de Proceso](#_heading=h.2tt6jnn1x71j)
 
-[2.2.2 Diagrama de Proceso	](#_heading=h.2tt6jnn1x71j)10
+[3.3 Descripción de actividades](#_heading=h.6k5tqn2cu3a2)
 
-[2.2.3 Descripción de actividades	](#_heading=h.6k5tqn2cu3a2)11
+[4. Proceso: Respuesta a reclamos:](#_heading=h.ksxassmnjlla)
 
-[2.3 Proceso: Respuesta a reclamos:	](#_heading=h.ksxassmnjlla)13
+[4.1 Ficha de proceso:](#_heading=h.3531m1vr6rkg)
 
-[2.3.1 Ficha de proceso:	](#_heading=h.3531m1vr6rkg)13
+[4.2 Diagrama de proceso:](#_heading=h.8a97h5on4g6o)
 
-[2.3.2 Diagrama de proceso:	](#_heading=h.8a97h5on4g6o)14
-
-[2.3.3 Descripción de actividades:	](#_heading=h.al7dmvn8tlpx)14
+[4.3 Descripción de actividades:](#_heading=h.al7dmvn8tlpx)
 
 
 
@@ -84,29 +82,24 @@
    El propósito del proyecto es mejorar la eficiencia en el proceso de evaluación educativa al integrar tecnología de inteligencia artificial para ayudar a los docentes en la revisión de exámenes y la evaluación de desempeño de los estudiantes. Esto se lograría mediante la creación de una plataforma educativa que permita el ingreso de rúbricas de evaluación por parte del profesor y la generación de autoevaluaciones por parte de un asistente virtual implementado con IA. El objetivo final sería agilizar el proceso de evaluación, proporcionar retroalimentación automática a los estudiantes y permitirles revisar sus calificaciones de manera rápida y precisa.
 
 1. ## <a name="_heading=h.3gbxxmgeo82g"></a>**Glosario**
-1. # <a name="_heading=h.jj2frwdq33g0"></a>**Procesos:**
 
-   1. ## <a name="_heading=h.kfcda8hp97gl"></a>**Proceso: Gestión de Cuentas de Usuario.**
-      1. ### <a name="_heading=h.xaqw1xosv3l"></a>**Ficha de Proceso**
+1. ## <a name="_heading=h.kfcda8hp97gl"></a>**Proceso: Gestión de Cuentas de Usuario.**
+   1. ### <a name="_heading=h.xaqw1xosv3l"></a>**Ficha de Proceso**
 
+   1. ### <a name="_heading=h.n30edv4xm67l"></a>**Diagrama del Proceso**
 
-      1. ### <a name="_heading=h.n30edv4xm67l"></a>**Diagrama del Proceso**
+   1. ### <a name="_heading=h.a7vbej849lv3"></a>**Descripción de Actividades**
 
+1. ## <a name="_heading=h.xi9ef7x2o3mu"></a>**Proceso: Gestión de Evaluación**
+   1. ### <a name="_heading=h.17dp8vu"></a>**Ficha de Proceso**
 
-      1. ### <a name="_heading=h.a7vbej849lv3"></a>**Descripción de Actividades**
+   1. ### <a name="_heading=h.2et92p0"></a><a name="_heading=h.2tt6jnn1x71j"></a>**Diagrama de Proceso**
 
+   1. ### <a name="_heading=h.6k5tqn2cu3a2"></a>**Descripción de actividades**
 
+1. ## <a name="_heading=h.ksxassmnjlla"></a>**Proceso: Respuesta a reclamos:**
+   1. ### <a name="_heading=h.3531m1vr6rkg"></a>**Ficha de proceso:**
 
-   1. ## <a name="_heading=h.xi9ef7x2o3mu"></a>**Proceso: Gestión de Evaluación**
-      1. ### <a name="_heading=h.17dp8vu"></a>**Ficha de Proceso**
-
-      1. ### <a name="_heading=h.2et92p0"></a><a name="_heading=h.2tt6jnn1x71j"></a>**Diagrama de Proceso**
-
-      1. ### <a name="_heading=h.6k5tqn2cu3a2"></a>**Descripción de actividades**
-
-
-   1. ## <a name="_heading=h.ksxassmnjlla"></a>**Proceso: Respuesta a reclamos:**
-      1. ### <a name="_heading=h.3531m1vr6rkg"></a>**Ficha de proceso:**
 
 |<p>**Número o código** </p><p>**de proceso**</p>|**Proceso**|**Responsable**|**Objetivo / Propósito**|
 | :-: | :-: | :-: | :-: |
@@ -123,11 +116,11 @@
 |6|Registro de la respuesta|Respuesta al reclamo junto con cualquier acción tomada.|Registro de la respuesta en el sistema, que incluye detalles como la fecha y la descripción de la acción tomada.|
 |7|Seguimiento del reclamo|Estado actual del reclamo y cualquier actualización relevante.|Registro actualizado del estado del reclamo, que puede incluir notas adicionales sobre el seguimiento realizado.|
 
-      1. ### <a name="_heading=h.8a97h5on4g6o"></a>**Diagrama de proceso:**
+   1. ### <a name="_heading=h.8a97h5on4g6o"></a>**Diagrama de proceso:**
 
    ![Diagrama3](Imágenes/DN-Diagrama3.png)
 
-      1. ### <a name="_heading=h.al7dmvn8tlpx"></a>**Descripción de actividades:**
+   1. ### <a name="_heading=h.al7dmvn8tlpx"></a>**Descripción de actividades:**
 
 |**ID**|**Actividad**|**Descripción**|**Rol**|**Tipo**|
 | :-: | :-: | :-: | :-: | :-: |
