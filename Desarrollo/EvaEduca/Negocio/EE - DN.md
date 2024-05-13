@@ -84,21 +84,21 @@
 1. ## <a name="_heading=h.3gbxxmgeo82g"></a>**Glosario**
 
 1. ## <a name="_heading=h.kfcda8hp97gl"></a>**Proceso: Gestión de Cuentas de Usuario.**
-   1. ### <a name="_heading=h.xaqw1xosv3l"></a>**Ficha de Proceso**
+   2.1. <a name="_heading=h.xaqw1xosv3l"></a>**Ficha de Proceso**
 
-   1. ### <a name="_heading=h.n30edv4xm67l"></a>**Diagrama del Proceso**
+   2.2. <a name="_heading=h.n30edv4xm67l"></a>**Diagrama del Proceso**
 
-   1. ### <a name="_heading=h.a7vbej849lv3"></a>**Descripción de Actividades**
+   2.3. <a name="_heading=h.a7vbej849lv3"></a>**Descripción de Actividades**
 
 1. ## <a name="_heading=h.xi9ef7x2o3mu"></a>**Proceso: Gestión de Evaluación**
-   1. ### <a name="_heading=h.17dp8vu"></a>**Ficha de Proceso**
+   3.3. <a name="_heading=h.17dp8vu"></a>**Ficha de Proceso**
 
-   1. ### <a name="_heading=h.2et92p0"></a><a name="_heading=h.2tt6jnn1x71j"></a>**Diagrama de Proceso**
+   3.4. <a name="_heading=h.2et92p0"></a><a name="_heading=h.2tt6jnn1x71j"></a>**Diagrama de Proceso**
 
-   1. ### <a name="_heading=h.6k5tqn2cu3a2"></a>**Descripción de actividades**
+   3.5. <a name="_heading=h.6k5tqn2cu3a2"></a>**Descripción de actividades**
 
 1. ## <a name="_heading=h.ksxassmnjlla"></a>**Proceso: Respuesta a reclamos:**
-   1. ### <a name="_heading=h.3531m1vr6rkg"></a>**Ficha de proceso:**
+   4.1. <a name="_heading=h.3531m1vr6rkg"></a>**Ficha de proceso:**
 
 
 |<p>**Número o código** </p><p>**de proceso**</p>|**Proceso**|**Responsable**|**Objetivo / Propósito**|
@@ -116,11 +116,11 @@
 |6|Registro de la respuesta|Respuesta al reclamo junto con cualquier acción tomada.|Registro de la respuesta en el sistema, que incluye detalles como la fecha y la descripción de la acción tomada.|
 |7|Seguimiento del reclamo|Estado actual del reclamo y cualquier actualización relevante.|Registro actualizado del estado del reclamo, que puede incluir notas adicionales sobre el seguimiento realizado.|
 
-   1. ### <a name="_heading=h.8a97h5on4g6o"></a>**Diagrama de proceso:**
+   4.2. <a name="_heading=h.8a97h5on4g6o"></a>**Diagrama de proceso:**
 
    ![Diagrama3](Imágenes/DN-Diagrama3.png)
 
-   1. ### <a name="_heading=h.al7dmvn8tlpx"></a>**Descripción de actividades:**
+   4.3. <a name="_heading=h.al7dmvn8tlpx"></a>**Descripción de actividades:**
 
 |**ID**|**Actividad**|**Descripción**|**Rol**|**Tipo**|
 | :-: | :-: | :-: | :-: | :-: |
