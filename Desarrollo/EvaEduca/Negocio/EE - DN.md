@@ -72,14 +72,16 @@
 
 <a name="_heading=h.30j0zll"></a>**Documento de Negocio**
 1. <a name="_heading=h.1fob9te"></a>**Introducción**
-<a name="_heading=h.fceyce7femkq"></a>En un mundo donde la educación está en constante evolución y enfrenta nuevos desafíos, el proyecto Eva Educa surge como una solución que busca mejorar la eficiencia y la calidad del proceso de evaluación educativa.
 
-<a name="_heading=h.hj678lvwapct"></a>Eva Educa tiene como objetivo principal mejorar la experiencia tanto de docentes como de estudiantes al agilizar el proceso de revisión y retroalimentación de las evaluaciones. Al integrar un asistente virtual y autoevaluación basada en IA, la plataforma permite a los profesores ingresar rúbricas de evaluación y generar autoevaluaciones de manera automatizada, proporcionando una evaluación más rápida, precisa y personalizada para los estudiantes.
+En un mundo donde la educación está en constante evolución y enfrenta nuevos desafíos, el proyecto Eva Educa surge como una solución que busca mejorar la eficiencia y la calidad del proceso de evaluación educativa.
 
-<a name="_heading=h.lc3m1f67yk1d"></a>A lo largo de este documento, explicaremos en detalle la visión, los objetivos y la estrategia de implementación de Eva Educa, así como su modelo de negocio y el potencial impacto que puede tener en el panorama educativo.
+Eva Educa tiene como objetivo principal mejorar la experiencia tanto de docentes como de estudiantes al agilizar el proceso de revisión y retroalimentación de las evaluaciones. Al integrar un asistente virtual y autoevaluación basada en IA, la plataforma permite a los profesores ingresar rúbricas de evaluación y generar autoevaluaciones de manera automatizada, proporcionando una evaluación más rápida, precisa y personalizada para los estudiantes.
+
+A lo largo de este documento, explicaremos en detalle la visión, los objetivos y la estrategia de implementación de Eva Educa, así como su modelo de negocio y el potencial impacto que puede tener en el panorama educativo.
 
 1.1. <a name="_heading=h.34vz6lsq34yl"></a><a name="_heading=h.x8dev0qcgdzp"></a>**Propósito**
-   El propósito del proyecto es mejorar la eficiencia en el proceso de evaluación educativa al integrar tecnología de inteligencia artificial para ayudar a los docentes en la revisión de exámenes y la evaluación de desempeño de los estudiantes. Esto se lograría mediante la creación de una plataforma educativa que permita el ingreso de rúbricas de evaluación por parte del profesor y la generación de autoevaluaciones por parte de un asistente virtual implementado con IA. El objetivo final sería agilizar el proceso de evaluación, proporcionar retroalimentación automática a los estudiantes y permitirles revisar sus calificaciones de manera rápida y precisa.
+   
+El propósito del proyecto es mejorar la eficiencia en el proceso de evaluación educativa al integrar tecnología de inteligencia artificial para ayudar a los docentes en la revisión de exámenes y la evaluación de desempeño de los estudiantes. Esto se lograría mediante la creación de una plataforma educativa que permita el ingreso de rúbricas de evaluación por parte del profesor y la generación de autoevaluaciones por parte de un asistente virtual implementado con IA. El objetivo final sería agilizar el proceso de evaluación, proporcionar retroalimentación automática a los estudiantes y permitirles revisar sus calificaciones de manera rápida y precisa.
 
 1.2. <a name="_heading=h.3gbxxmgeo82g"></a>**Glosario**
 
