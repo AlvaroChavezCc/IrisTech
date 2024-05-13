@@ -85,7 +85,8 @@ El propósito del proyecto es mejorar la eficiencia en el proceso de evaluación
 
 1.2. <a name="_heading=h.3gbxxmgeo82g"></a>**Glosario**
 
-2. <a name="_heading=h.kfcda8hp97gl"></a>**Proceso: Gestión de Cuentas de Usuario.**
+2. <a name="_heading=h.kfcda8hp97gl"></a>**Proceso: Gestión de Cuentas de Usuario**
+
    2.1. <a name="_heading=h.xaqw1xosv3l"></a>**Ficha de Proceso**
 
    2.2. <a name="_heading=h.n30edv4xm67l"></a>**Diagrama del Proceso**
@@ -93,6 +94,7 @@ El propósito del proyecto es mejorar la eficiencia en el proceso de evaluación
    2.3. <a name="_heading=h.a7vbej849lv3"></a>**Descripción de Actividades**
 
 3. <a name="_heading=h.xi9ef7x2o3mu"></a>**Proceso: Gestión de Evaluación**
+
    3.3. <a name="_heading=h.17dp8vu"></a>**Ficha de Proceso**
 
    3.4. <a name="_heading=h.2et92p0"></a><a name="_heading=h.2tt6jnn1x71j"></a>**Diagrama de Proceso**
@@ -100,6 +102,7 @@ El propósito del proyecto es mejorar la eficiencia en el proceso de evaluación
    3.5. <a name="_heading=h.6k5tqn2cu3a2"></a>**Descripción de actividades**
 
 4. <a name="_heading=h.ksxassmnjlla"></a>**Proceso: Respuesta a reclamos:**
+
    4.1. <a name="_heading=h.3531m1vr6rkg"></a>**Ficha de proceso:**
 
 
