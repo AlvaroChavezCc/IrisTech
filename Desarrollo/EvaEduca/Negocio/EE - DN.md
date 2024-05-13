@@ -78,26 +78,26 @@
 
 <a name="_heading=h.lc3m1f67yk1d"></a>A lo largo de este documento, explicaremos en detalle la visión, los objetivos y la estrategia de implementación de Eva Educa, así como su modelo de negocio y el potencial impacto que puede tener en el panorama educativo.
 
-1. ## <a name="_heading=h.34vz6lsq34yl"></a><a name="_heading=h.x8dev0qcgdzp"></a>**Propósito**
+1.1. ## <a name="_heading=h.34vz6lsq34yl"></a><a name="_heading=h.x8dev0qcgdzp"></a>**Propósito**
    El propósito del proyecto es mejorar la eficiencia en el proceso de evaluación educativa al integrar tecnología de inteligencia artificial para ayudar a los docentes en la revisión de exámenes y la evaluación de desempeño de los estudiantes. Esto se lograría mediante la creación de una plataforma educativa que permita el ingreso de rúbricas de evaluación por parte del profesor y la generación de autoevaluaciones por parte de un asistente virtual implementado con IA. El objetivo final sería agilizar el proceso de evaluación, proporcionar retroalimentación automática a los estudiantes y permitirles revisar sus calificaciones de manera rápida y precisa.
 
-1. ## <a name="_heading=h.3gbxxmgeo82g"></a>**Glosario**
+1.2. ## <a name="_heading=h.3gbxxmgeo82g"></a>**Glosario**
 
-1. ## <a name="_heading=h.kfcda8hp97gl"></a>**Proceso: Gestión de Cuentas de Usuario.**
+2. ## <a name="_heading=h.kfcda8hp97gl"></a>**Proceso: Gestión de Cuentas de Usuario.**
    2.1. <a name="_heading=h.xaqw1xosv3l"></a>**Ficha de Proceso**
 
    2.2. <a name="_heading=h.n30edv4xm67l"></a>**Diagrama del Proceso**
 
    2.3. <a name="_heading=h.a7vbej849lv3"></a>**Descripción de Actividades**
 
-1. ## <a name="_heading=h.xi9ef7x2o3mu"></a>**Proceso: Gestión de Evaluación**
+3. ## <a name="_heading=h.xi9ef7x2o3mu"></a>**Proceso: Gestión de Evaluación**
    3.3. <a name="_heading=h.17dp8vu"></a>**Ficha de Proceso**
 
    3.4. <a name="_heading=h.2et92p0"></a><a name="_heading=h.2tt6jnn1x71j"></a>**Diagrama de Proceso**
 
    3.5. <a name="_heading=h.6k5tqn2cu3a2"></a>**Descripción de actividades**
 
-1. ## <a name="_heading=h.ksxassmnjlla"></a>**Proceso: Respuesta a reclamos:**
+4. ## <a name="_heading=h.ksxassmnjlla"></a>**Proceso: Respuesta a reclamos:**
    4.1. <a name="_heading=h.3531m1vr6rkg"></a>**Ficha de proceso:**
 
 
