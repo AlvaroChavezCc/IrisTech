@@ -89,9 +89,40 @@ El propósito del proyecto es mejorar la eficiencia en el proceso de evaluación
 
    2.1. <a name="_heading=h.xaqw1xosv3l"></a>**Ficha de Proceso**
 
+
+|**ID**|**Actividad**|**Datos de Entrada**|**Datos de Salida**|
+| :-: | :-: | :-: | :-: |
+|1|Inicio de sesión|Credenciales del usuario|Confirmación de inicio de sesión|
+|2|Verificar rol|Identificador del usuario|Información de Rol|
+|3|<p>Habilitar</p><p>administrador</p>|Selección de opción para habilitar|Confirmación de habilitación|
+|4|<p>Deshabilitar</p><p>administrador</p>|Selección de opción para deshabilitar|Confirmación de deshabilitación|
+|5|Eliminar administrador|Selección de opción para eliminar |Confirmación de eliminación|
+|6|<p>Habilitar</p><p>profesor</p>|Selección de opción para habilitar|Confirmación de habilitación|
+|7|<p>Deshabilitar</p><p>profesor</p>|Selección de opción para deshabilitar|Confirmación de deshabilitación|
+|8|Eliminar profesor|Selección de opción para eliminar |Confirmación de eliminación|
+|9|<p>Habilitar</p><p>alumno</p>|Selección de opción para habilitar|Confirmación de habilitación|
+|10|<p>Deshabilitar</p><p>alumno</p>|Selección de opción para deshabilitar|Confirmación de deshabilitación|
+|11|Eliminar alumno|Selección de opción para eliminar |Confirmación de eliminación|
+
    2.2. <a name="_heading=h.n30edv4xm67l"></a>**Diagrama del Proceso**
 
+   ![Diagrama1](Imágenes/DN-Diagrama1.jpg)  
+
    2.3. <a name="_heading=h.a7vbej849lv3"></a>**Descripción de Actividades**
+
+|**ID**|**Actividad**|**Descripción** |**Rol**|**Tipo**|
+| :-: | :-: | :-: | :-: | :-: |
+|1|Inicio de sesión|El usuario inicia sesión en la plataforma. |Tester|Manual|
+|2|Verificar rol|Se verifica si tiene rol de superadministrador o administrador.|Analista funcional, Tester|Manual|
+|3|<p>Habilitar</p><p>administrador</p>|<p>De confirmarse el rol de superadministrador se le habilita la opción de Habilitar</p><p>administrador.</p>|Jefe de proyecto, DBA|Manual|
+|4|<p>Deshabilitar</p><p>administrador</p>|<p>De confirmarse el rol de superadministrador se le habilita la opción de Deshabilitar</p><p>administrador.</p>|Jefe de proyecto, DBA|Manual|
+|5|Eliminar administrador|De confirmarse el rol de superadministrador se le habilita la opción de Eliminar administrador.|Jefe de proyecto, DBA|Manual|
+|6|<p>Habilitar</p><p>profesor</p>|De confirmarse el rol de superadministrador o administrador se le habilita la opción de Habilitar profesor.|Analista funcional, Programador Backend|Manual|
+|7|<p>Deshabilitar</p><p>profesor</p>|De confirmarse el rol de superadministrador o administrador se le habilita la opción de Deshabilitar profesor.|Analista funcional, Programador Backend|Manual|
+|8|Eliminar profesor|De confirmarse el rol de superadministrador o administrador se le habilita la opción de Eliminar profesor.|Analista funcional, Programador Backend|Manual|
+|9|<p>Habilitar</p><p>alumno</p>|De confirmarse el rol de superadministrador o administrador se le habilita la opción de Habilitar alumno.|Analista funcional, Programador Frontend, Diseñador UX|Manual|
+|10|<p>Deshabilitar</p><p>alumno</p>|De confirmarse el rol de superadministrador o administrador se le habilita la opción de Deshabilitar alumno.|Analista funcional, Programador Frontend, Diseñador UX|Manual|
+|11|Eliminar alumno|De confirmarse el rol de superadministrador o administrador se le habilita la opción de Eliminar alumno.|Analista funcional, Programador Frontend, Diseñador UX|Manual|
 
 3. <a name="_heading=h.xi9ef7x2o3mu"></a>**Proceso: Gestión de Evaluación**
 
