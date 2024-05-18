@@ -85,6 +85,80 @@ El propósito del proyecto es mejorar la eficiencia en el proceso de evaluación
 
 1.2. <a name="_heading=h.3gbxxmgeo82g"></a>**Glosario**
 
+### Proceso: Registro y Autenticación de Usuarios
+
+#### 2.1 Ficha de Proceso
+
+| **ID** | **Actividad**           | **Datos de Entrada**            | **Datos de Salida**              |
+| :-:    | :-:                     | :-:                             | :-:                              |
+| 1      | Registro de usuario     | Datos personales del usuario    | Confirmación de registro         |
+| 2      | Validación de correo    | Dirección de correo del usuario | Código de validación             |
+| 3      | Activación de cuenta    | Código de validación            | Confirmación de activación       |
+| 4      | Inicio de sesión        | Credenciales del usuario        | Confirmación de inicio de sesión |
+| 5      | Verificación de rol     | Identificador del usuario       | Información de Rol               |
+| 6      | Recuperación de cuenta  | Correo electrónico del usuario  | Código de recuperación           |
+| 7      | Cambio de contraseña    | Código de recuperación, nueva contraseña | Confirmación de cambio de contraseña |
+
+#### 2.2 Diagrama del Proceso
+
+![Diagrama2](Imágenes/DN-Diagrama2.jpg)
+
+#### 2.3 Descripción de Actividades
+
+| **ID** | **Actividad**           | **Descripción**                                                                                   | **Rol**                                | **Tipo**   |
+| :-:    | :-:                     | :-:                                                                                               | :-:                                    | :-:        |
+| 1      | Registro de usuario     | El usuario proporciona sus datos personales para crear una cuenta nueva en la plataforma.        | Usuario, Sistema                       | Manual     |
+| 2      | Validación de correo    | El sistema envía un código de validación al correo electrónico del usuario para verificar su identidad. | Sistema                               | Automático |
+| 3      | Activación de cuenta    | El usuario ingresa el código de validación recibido para activar su cuenta.                      | Usuario, Sistema                       | Manual     |
+| 4      | Inicio de sesión        | El usuario ingresa sus credenciales (nombre de usuario y contraseña) para acceder a la plataforma.| Usuario, Sistema                       | Manual     |
+| 5      | Verificación de rol     | El sistema verifica el rol del usuario (administrador, profesor, alumno) para habilitar las opciones correspondientes. | Sistema                               | Automático |
+| 6      | Recuperación de cuenta  | El usuario solicita un código de recuperación de cuenta que es enviado a su correo electrónico.  | Usuario, Sistema                       | Manual     |
+| 7      | Cambio de contraseña    | El usuario utiliza el código de recuperación para establecer una nueva contraseña.               | Usuario, Sistema                       | Manual     |
+
+### Descripción Detallada del Proceso de Registro y Autenticación de Usuarios
+
+**1. Registro de usuario**
+
+   - **Descripción:** El usuario inicia el proceso de registro proporcionando datos personales como nombre, correo electrónico y una contraseña. Estos datos se ingresan a través de un formulario de registro en la plataforma.
+   - **Rol:** Usuario
+   - **Tipo:** Manual
+
+**2. Validación de correo**
+
+   - **Descripción:** Una vez completado el formulario de registro, el sistema envía automáticamente un correo electrónico de validación al usuario con un código de verificación. Este paso asegura que el correo proporcionado es válido y accesible por el usuario.
+   - **Rol:** Sistema
+   - **Tipo:** Automático
+
+**3. Activación de cuenta**
+
+   - **Descripción:** El usuario debe ingresar el código de verificación recibido en su correo electrónico para activar su cuenta. Una vez ingresado y validado el código, el sistema confirma la activación de la cuenta y permite al usuario acceder a sus funcionalidades.
+   - **Rol:** Usuario, Sistema
+   - **Tipo:** Manual
+
+**4. Inicio de sesión**
+
+   - **Descripción:** Con la cuenta activada, el usuario puede iniciar sesión en la plataforma ingresando sus credenciales (nombre de usuario y contraseña). El sistema verifica estas credenciales y, si son correctas, permite el acceso a la plataforma.
+   - **Rol:** Usuario, Sistema
+   - **Tipo:** Manual
+
+**5. Verificación de rol**
+
+   - **Descripción:** Después de un inicio de sesión exitoso, el sistema verifica el rol asignado al usuario (administrador, profesor, alumno) y habilita las opciones y permisos correspondientes en la interfaz de usuario.
+   - **Rol:** Sistema
+   - **Tipo:** Automático
+
+**6. Recuperación de cuenta**
+
+   - **Descripción:** Si un usuario olvida su contraseña, puede solicitar la recuperación de su cuenta. El sistema envía un código de recuperación al correo electrónico registrado. El usuario debe ingresar este código para proceder con el cambio de contraseña.
+   - **Rol:** Usuario, Sistema
+   - **Tipo:** Manual
+
+**7. Cambio de contraseña**
+
+   - **Descripción:** Utilizando el código de recuperación recibido, el usuario puede establecer una nueva contraseña. Una vez completado este proceso, el sistema confirma el cambio y permite al usuario iniciar sesión con la nueva contraseña.
+   - **Rol:** Usuario, Sistema
+   - **Tipo:** Manual
+
 2. <a name="_heading=h.kfcda8hp97gl"></a>**Proceso: Gestión de Cuentas de Usuario**
 
    2.1. <a name="_heading=h.xaqw1xosv3l"></a>**Ficha de Proceso**
