@@ -12,11 +12,6 @@
 
 
 
-
-
-
-
-
 **Historial de Revisiones**
 
 |**Fecha**|**Versión**|**Descripción**|**Autor**|
