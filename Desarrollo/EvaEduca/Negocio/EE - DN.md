@@ -96,7 +96,8 @@ El propósito del proyecto es mejorar la eficiencia en el proceso de evaluación
 
 #### 2.2 Diagrama del Proceso
 
-![Diagrama2](Imágenes/DN-Diagrama2.jpg)
+![image](https://github.com/AlvaroChavezCc/IrisTech/assets/135046973/55327b25-3982-4a25-8256-cc67885aa1b5)
+
 
 #### 2.3 Descripción de Actividades
 
