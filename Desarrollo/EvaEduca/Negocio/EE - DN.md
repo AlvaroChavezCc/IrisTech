@@ -37,33 +37,45 @@
 
 [1.2 Glosario](#_heading=h.3gbxxmgeo82g)
 
-[2. Proceso: Gestión de Cuentas de Usuario.](#_heading=h.kfcda8hp97gl)
+[2. Proceso: Registro y autenticación de usuarios](#_heading=h.czqsb0p06nok)
 
-[2.1 Ficha de Proceso](#_heading=h.xaqw1xosv3l)
+[2.1 Ficha del proceso](#_heading=h.462wlwli3mrs)
 
-[2.2 Diagrama del Proceso](#_heading=h.n30edv4xm67l)
+[2.2 Diagrama del proceso](#_heading=h.rnba47n08o46)
 
-[2.3 Descripción de Actividades](#_heading=h.a7vbej849lv3)
+[2.3 Descripción de actividades](#_heading=h.r1m4usbjqcpl)
 
-[3. Proceso: Gestión de Evaluación](#_heading=h.xi9ef7x2o3mu)
+[4. Proceso: Gestión de Cuentas de Usuario.](#_heading=h.kfcda8hp97gl)
 
-[3.1 Ficha de Proceso](#_heading=h.17dp8vu)
+[4.1 Ficha de Proceso](#_heading=h.xaqw1xosv3l)
 
-[3.2 Diagrama de Proceso](#_heading=h.2tt6jnn1x71j)
+[4.2 Diagrama del Proceso](#_heading=h.n30edv4xm67l)
 
-[3.3 Descripción de actividades](#_heading=h.6k5tqn2cu3a2)
+[4.3 Descripción de Actividades](#_heading=h.a7vbej849lv3)
 
-[4. Proceso: Respuesta a reclamos:](#_heading=h.ksxassmnjlla)
+[5. Proceso: Gestión de cursos](#_heading=h.ruoqy95jo1q)
 
-[4.1 Ficha de proceso:](#_heading=h.3531m1vr6rkg)
+[5.1 Ficha de proceso](#_heading=h.4fmbwj4mif64)
 
-[4.2 Diagrama de proceso:](#_heading=h.8a97h5on4g6o)
+[5.2 Diagrama de proceso](#_heading=h.cjonv4ez0g7v)
 
-[4.3 Descripción de actividades:](#_heading=h.al7dmvn8tlpx)
+[5.3 Descripción de actividades](#_heading=h.65ndex57hend)
 
+[6. Proceso: Gestión de Evaluación](#_heading=h.xi9ef7x2o3mu)
 
+[6.1 Ficha de Proceso](#_heading=h.17dp8vu)
 
+[6.2 Diagrama de Proceso](#_heading=h.2tt6jnn1x71j)
 
+[6.3 Descripción de actividades](#_heading=h.6k5tqn2cu3a2)
+
+[7. Proceso: Respuesta a reclamos:](#_heading=h.ksxassmnjlla)
+
+[7.1 Ficha de proceso:](#_heading=h.3531m1vr6rkg)
+
+[7.2 Diagrama de proceso:](#_heading=h.8a97h5on4g6o)
+
+[7.3 Descripción de actividades:](#_heading=h.al7dmvn8tlpx)
 
 <a name="_heading=h.30j0zll"></a>**Documento de Negocio**
 1. <a name="_heading=h.1fob9te"></a>**Introducción**
@@ -80,7 +92,7 @@ El propósito del proyecto es mejorar la eficiencia en el proceso de evaluación
 
 1.2. <a name="_heading=h.3gbxxmgeo82g"></a>**Glosario**
 
-### Proceso: Registro y Autenticación de Usuarios
+### 2. Proceso: Registro y Autenticación de Usuarios
 
 #### 2.1 Ficha de Proceso
 
@@ -111,53 +123,9 @@ El propósito del proyecto es mejorar la eficiencia en el proceso de evaluación
 | 6      | Recuperación de cuenta  | El usuario solicita un código de recuperación de cuenta que es enviado a su correo electrónico.  | Usuario, Sistema                       | Manual     |
 | 7      | Cambio de contraseña    | El usuario utiliza el código de recuperación para establecer una nueva contraseña.               | Usuario, Sistema                       | Manual     |
 
-### Descripción Detallada del Proceso de Registro y Autenticación de Usuarios
+4. <a name="_heading=h.kfcda8hp97gl"></a>**Proceso: Gestión de Cuentas de Usuario**
 
-**1. Registro de usuario**
-
-   - **Descripción:** El usuario inicia el proceso de registro proporcionando datos personales como nombre, correo electrónico y una contraseña. Estos datos se ingresan a través de un formulario de registro en la plataforma.
-   - **Rol:** Usuario
-   - **Tipo:** Manual
-
-**2. Validación de correo**
-
-   - **Descripción:** Una vez completado el formulario de registro, el sistema envía automáticamente un correo electrónico de validación al usuario con un código de verificación. Este paso asegura que el correo proporcionado es válido y accesible por el usuario.
-   - **Rol:** Sistema
-   - **Tipo:** Automático
-
-**3. Activación de cuenta**
-
-   - **Descripción:** El usuario debe ingresar el código de verificación recibido en su correo electrónico para activar su cuenta. Una vez ingresado y validado el código, el sistema confirma la activación de la cuenta y permite al usuario acceder a sus funcionalidades.
-   - **Rol:** Usuario, Sistema
-   - **Tipo:** Manual
-
-**4. Inicio de sesión**
-
-   - **Descripción:** Con la cuenta activada, el usuario puede iniciar sesión en la plataforma ingresando sus credenciales (nombre de usuario y contraseña). El sistema verifica estas credenciales y, si son correctas, permite el acceso a la plataforma.
-   - **Rol:** Usuario, Sistema
-   - **Tipo:** Manual
-
-**5. Verificación de rol**
-
-   - **Descripción:** Después de un inicio de sesión exitoso, el sistema verifica el rol asignado al usuario (administrador, profesor, alumno) y habilita las opciones y permisos correspondientes en la interfaz de usuario.
-   - **Rol:** Sistema
-   - **Tipo:** Automático
-
-**6. Recuperación de cuenta**
-
-   - **Descripción:** Si un usuario olvida su contraseña, puede solicitar la recuperación de su cuenta. El sistema envía un código de recuperación al correo electrónico registrado. El usuario debe ingresar este código para proceder con el cambio de contraseña.
-   - **Rol:** Usuario, Sistema
-   - **Tipo:** Manual
-
-**7. Cambio de contraseña**
-
-   - **Descripción:** Utilizando el código de recuperación recibido, el usuario puede establecer una nueva contraseña. Una vez completado este proceso, el sistema confirma el cambio y permite al usuario iniciar sesión con la nueva contraseña.
-   - **Rol:** Usuario, Sistema
-   - **Tipo:** Manual
-
-2. <a name="_heading=h.kfcda8hp97gl"></a>**Proceso: Gestión de Cuentas de Usuario**
-
-   2.1. <a name="_heading=h.xaqw1xosv3l"></a>**Ficha de Proceso**
+   4.1. <a name="_heading=h.xaqw1xosv3l"></a>**Ficha de Proceso**
 
 
 |**ID**|**Actividad**|**Datos de Entrada**|**Datos de Salida**|
@@ -174,11 +142,11 @@ El propósito del proyecto es mejorar la eficiencia en el proceso de evaluación
 |10|<p>Deshabilitar</p><p>alumno</p>|Selección de opción para deshabilitar|Confirmación de deshabilitación|
 |11|Eliminar alumno|Selección de opción para eliminar |Confirmación de eliminación|
 
-   2.2. <a name="_heading=h.n30edv4xm67l"></a>**Diagrama del Proceso**
+   4.2. <a name="_heading=h.n30edv4xm67l"></a>**Diagrama del Proceso**
 
    ![Diagrama1](Imágenes/DN-Diagrama1.jpg)  
 
-   2.3. <a name="_heading=h.a7vbej849lv3"></a>**Descripción de Actividades**
+   4.3. <a name="_heading=h.a7vbej849lv3"></a>**Descripción de Actividades**
 
 |**ID**|**Actividad**|**Descripción** |**Rol**|**Tipo**|
 | :-: | :-: | :-: | :-: | :-: |
@@ -194,17 +162,55 @@ El propósito del proyecto es mejorar la eficiencia en el proceso de evaluación
 |10|<p>Deshabilitar</p><p>alumno</p>|De confirmarse el rol de superadministrador o administrador se le habilita la opción de Deshabilitar alumno.|Administrador|Manual|
 |11|Eliminar alumno|De confirmarse el rol de superadministrador o administrador se le habilita la opción de Eliminar alumno.|Administrador|Manual|
 
-3. <a name="_heading=h.xi9ef7x2o3mu"></a>**Proceso: Gestión de Evaluación**
+5. <a name="_heading=h.ruoqy95jo1q"></a>**Proceso: Gestión de cursos**
 
-   3.3. <a name="_heading=h.17dp8vu"></a>**Ficha de Proceso**
+   5.1. <a name="_heading=h.4fmbwj4mif64"></a>**Ficha de proceso**
 
-   3.4. <a name="_heading=h.2et92p0"></a><a name="_heading=h.2tt6jnn1x71j"></a>**Diagrama de Proceso**
+|<p>**Número o código** </p><p>**de proceso**</p>|**Proceso**|**Responsable**|**Objetivo / Propósito**|
+| :-: | :-: | :-: | :-: |
+|PROC-004|Gestión de cursos|Jefe de Proyecto|Optimizar la gestión de cursos y subida de exámenes.|
 
-   3.5. <a name="_heading=h.6k5tqn2cu3a2"></a>**Descripción de actividades**
+-
 
-4. <a name="_heading=h.ksxassmnjlla"></a>**Proceso: Respuesta a reclamos:**
+|**Identificador**|**Actividad**|**Datos de Entrada**|**Datos de Salida**|
+| :-: | :-: | :-: | :-: |
+|1|Creación de curso|Nombre del curso, descripción del curso, profesor asignado|Confirmación de creación del curso, detalles del curso creado|
+|2|Asignación de Profesor a Curso|Curso a asignar, identificación del profesor|Confirmación de asignación del profesor, detalles actualizados del curso|
+|3|Inscripción de Alumnos en Curso|Curso en el que se inscriben los alumnos, datos de los alumnos (nombre, identificación, contacto)|Confirmación de inscripción de alumnos, listado de alumnos inscritos|
+|4|Actualización de Curso|Curso a actualizar, nueva información del curso (contenido, fechas, etc.)|Confirmación de actualización del curso, detalles actualizados del curso|
+|5|Eliminación de Curso|Curso a eliminar|Confirmación de eliminación del curso|
+|6|Visualización de Cursos|Identificación del profesor/alumno|Listado de cursos inscritos/asignados|
+|7|Administración de Contenido del Curso|Curso a administrar (Gestión de tareas, exámenes y rúbricas)|Confirmación de subida de materiales, contenidos y materiales del curso disponibles para alumnos|
 
-   4.1. <a name="_heading=h.3531m1vr6rkg"></a>**Ficha de proceso:**
+
+   5.2. <a name="_heading=h.cjonv4ez0g7v"></a>**Diagrama de proceso**
+
+  ![alt text](Imágenes/DN-Diagrama4.png)
+
+   5.3. <a name="_heading=h.65ndex57hend"></a>**Descripción de actividades**
+
+
+|**ID**|**Actividad**|**Descripción** |**Rol**|**Tipo**|
+| :-: | :-: | :-: | :-: | :-: |
+|1|Creación de curso|El profesor crea un nuevo curso proporcionando los detalles necesarios como el nombre del curso, descripción, y profesor asignado.|Profesor|Manual|
+|2|Asignación de Profesor a Curso|El administrador asigna un profesor al curso recién creado o existente.|Profesor|Manual|
+|3|Inscripción de Alumnos en Curso|Los alumnos se inscriben en el curso mediante la aplicación.|Alumno|Manual|
+|4|Actualización de Curso|El profesor actualiza la información del curso, como el contenido del curso, fechas importantes, y otros detalles.|Profesor|Manual|
+|5|Eliminación de Curso|El profesor elimina un curso existente cuando ya no es necesario.|Profesor|Manual|
+|6|Visualización de Cursos|El profesor y los alumnos pueden visualizar los cursos en los que están inscritos.|Profesor y alumno|Automático|
+|7|Administración de Contenido del Curso|El profesor administra el contenido del curso, asignando tareas y actualizando recursos.|Profesor|Manual|
+
+6. <a name="_heading=h.xi9ef7x2o3mu"></a>**Proceso: Gestión de Evaluación**
+
+   6.3. <a name="_heading=h.17dp8vu"></a>**Ficha de Proceso**
+
+   6.4. <a name="_heading=h.2et92p0"></a><a name="_heading=h.2tt6jnn1x71j"></a>**Diagrama de Proceso**
+
+   6.5. <a name="_heading=h.6k5tqn2cu3a2"></a>**Descripción de actividades**
+
+7. <a name="_heading=h.ksxassmnjlla"></a>**Proceso: Respuesta a reclamos:**
+
+   7.1. <a name="_heading=h.3531m1vr6rkg"></a>**Ficha de proceso:**
 
 
 |<p>**Número o código** </p><p>**de proceso**</p>|**Proceso**|**Responsable**|**Objetivo / Propósito**|
@@ -222,11 +228,11 @@ El propósito del proyecto es mejorar la eficiencia en el proceso de evaluación
 |6|Registro de la respuesta|Respuesta al reclamo junto con cualquier acción tomada.|Registro de la respuesta en el sistema, que incluye detalles como la fecha y la descripción de la acción tomada.|
 |7|Seguimiento del reclamo|Estado actual del reclamo y cualquier actualización relevante.|Registro actualizado del estado del reclamo, que puede incluir notas adicionales sobre el seguimiento realizado.|
 
-   4.2. <a name="_heading=h.8a97h5on4g6o"></a>**Diagrama de proceso:**
+   7.2. <a name="_heading=h.8a97h5on4g6o"></a>**Diagrama de proceso:**
 
    ![Diagrama3](Imágenes/DN-Diagrama3.png)
 
-   4.3. <a name="_heading=h.al7dmvn8tlpx"></a>**Descripción de actividades:**
+   7.3. <a name="_heading=h.al7dmvn8tlpx"></a>**Descripción de actividades:**
 
 |**ID**|**Actividad**|**Descripción**|**Rol**|**Tipo**|
 | :-: | :-: | :-: | :-: | :-: |
