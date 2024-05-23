@@ -6,7 +6,7 @@
 <a name="_gjdgxs"></a>		**Proyecto EvaEduca: Plataforma educativa con asistente virtual y autoevaluación AI** 
 
 
-<a name="_h3gsjmnnllqr"></a>**Versión 1.1**
+<a name="_h3gsjmnnllqr"></a>**Versión 1.2**
 
 
 
@@ -14,9 +14,9 @@
 
 |**Fecha**|**Versión**|**Descripción**|**Autor**|
 | - | - | - | - |
-|4/05/2024|1\.0|Versión preliminar como una propuesta de desarrollo.|Álvaro Andrés Chávez Ccahuana|
-|13/05/2024|1\.1|Desarrollo del documento|Álvaro Andrés Chávez Ccahuana|
-|||||
+|4/05/2024|1\.0|Versión preliminar como una propuesta de desarrollo.|Jefe de proyecto|
+|13/05/2024|1\.1|Desarrollo del documento|Jefe de proyecto|
+|23/05/2024|1\.2|Modificación de contenido: Definición de nomenclatura, clasificación|Jefe de proyecto|
 |||||
 |||||
 |||||
@@ -130,11 +130,11 @@ El siguiente diagrama explica de manera simplificada cómo utilizamos nuestra he
 
 Como referencia hemos tomado nuestro cronograma de proyecto elaborado (Ver anexo 1), por lo tanto clasificaremos los ítems de acuerdo a su tipo de ítem, estos tipos de ítems pueden ser:
 
-- **Ítems de tipo evolutivo:** Se refiere a los elementos del proyecto que pueden cambiar o evolucionar a lo largo del tiempo, como requisitos, funcionalidades, componentes de software, documentación, entre otros. Estos elementos pueden ser actualizados, modificados o agregados en diferentes etapas del proyecto para adaptarse a nuevas necesidades, requisitos del cliente o mejoras en el producto.
+1. **Ítems de tipo evolutivo,** tales como documentos, los que están sujetos a una o más revisiones y nuevas liberaciones durante el ciclo de vida del software. Los Items en evolución son de dos tipos: Documentos, y archivos ejecutables o de soporte.
 
-- **Ítems de tipo fuente:** En el contexto de la gestión de la configuración, la fuente se refiere al origen o la procedencia de los elementos del proyecto. Puede ser cualquier lugar donde se originen o se obtengan los elementos, como repositorios de código, sistemas de control de versiones, documentos, bases de datos, entre otros. Identificar la fuente de los elementos es importante para rastrear su historial y gestionar adecuadamente su evolución.
+1. **Ítems de tipo fuente,** generalmente código fuente y archivos objeto utilizados  para compilar una aplicación de software para ambiente de producción, los cuales son generalmente numerosos y cambian frecuentemente.
 
-- **Ítems de tipo soporte:** Se refiere a los mecanismos, herramientas y procedimientos establecidos para proporcionar asistencia y mantenimiento a los elementos del proyecto a lo largo de su ciclo de vida. Esto incluye actividades como la resolución de problemas, la gestión de cambios, la actualización de la documentación, el mantenimiento del software, entre otros. El soporte asegura que los elementos del proyecto sean gestionados de manera efectiva y puedan mantenerse en un estado funcional y actualizado.
+1. **Ítems de tipo soporte:** como sistemas operativos y software base, de los cuales el proyecto requiere ciertas versiones para su operación exitosa.
 
 Para la clasificación de items, se tomó la siguiente regla de asignación:
 
@@ -142,23 +142,24 @@ Para la clasificación de items, se tomó la siguiente regla de asignación:
 - F = Ítem de tipo fuente
 - S = Ítem de tipo soporte
 
-<table><tr><th><b>Tipo</b></th><th><b>Items</b></th><th><b>EAT</b></th><th><b>Proyecto</b></th></tr>
-<tr><td>F</td><td valign="bottom">Plan de Proyecto</td><td valign="bottom">.DOCX</td><td rowspan="16">EvaEduca</td></tr>
-<tr><td>F</td><td valign="bottom">Cronograma del Proyecto</td><td valign="bottom">.XLSX</td></tr>
-<tr><td>F</td><td valign="bottom">Documento de negocio</td><td valign="bottom">.DOCX</td></tr>
-<tr><td>F</td><td valign="bottom">Documento de Especificación de Requisitos: Actores</td><td valign="bottom">.DOCX</td></tr>
-<tr><td>F</td><td valign="bottom">Documento de Especificación de Requisitos: Casos de Uso</td><td valign="bottom">.DOCX</td></tr>
-<tr><td>E</td><td valign="bottom">Documento de Especificación de UI</td><td valign="bottom">.DOCX</td></tr>
-<tr><td>E</td><td valign="bottom">Documento de Guía de Estilos</td><td valign="bottom">.DOCX</td></tr>
-<tr><td>E</td><td valign="bottom">Documento de Especificación de la BD</td><td valign="bottom">.DOCX</td></tr>
-<tr><td>E</td><td valign="bottom">Documento de Arquitectura del Software</td><td valign="bottom">.DOCX</td></tr>
-<tr><td>E</td><td valign="bottom">Reporte del Desarrollo del Software</td><td valign="bottom">.DOCX</td></tr>
-<tr><td>S</td><td valign="bottom">Reporte del Primer Sprint</td><td valign="bottom">.DOCX</td></tr>
-<tr><td>S</td><td valign="bottom">Reporte del Segundo Sprint</td><td valign="bottom"></td></tr>
-<tr><td>S</td><td valign="bottom">Manual de usuario</td><td valign="bottom">.DOCX</td></tr>
-<tr><td>E</td><td valign="bottom">Documento de Pruebas del Software</td><td valign="bottom">.DOCX</td></tr>
-<tr><td>S</td><td valign="bottom">Reporte del Tercer Sprint</td><td valign="bottom">.DOCX</td></tr>
-<tr><td>S</td><td valign="bottom">Acta de cierre del proyecto</td><td valign="bottom">.DOCX</td></tr>
+<table><tr><th><b>Tipo</b></th><th><b>Items</b></th><th><b>Fuente (E=Empresa, P=Proyecto, C=Cliente, V=Proveedor)</b></th><th><b>Extensión</b></th><th><b>Proyecto</b></th></tr>
+<tr><td>E</td><td valign="bottom">Plan de Gestión de la Configuración de Software</td><td valign="bottom">E</td><td valign="bottom">.DOCX</td><td>-</td></tr>
+<tr><td>E</td><td valign="bottom">Plan de Proyecto</td><td valign="bottom">P</td><td valign="bottom">.DOCX</td><td rowspan="16">EvaEduca</td></tr>
+<tr><td>E</td><td valign="bottom">Cronograma del Proyecto</td><td valign="bottom">P</td><td valign="bottom">.XLSX</td></tr>
+<tr><td>E</td><td valign="bottom">Documento de negocio</td><td valign="bottom">P</td><td valign="bottom">.DOCX</td></tr>
+<tr><td>E</td><td valign="bottom">Documento de Especificación de Requisitos: Actores</td><td valign="bottom">P</td><td valign="bottom">.DOCX</td></tr>
+<tr><td>E</td><td valign="bottom">Documento de Especificación de Requisitos: Casos de Uso</td><td valign="bottom">P</td><td valign="bottom">.DOCX</td></tr>
+<tr><td>E</td><td valign="bottom">Documento de Especificación de UI</td><td valign="bottom">P</td><td valign="bottom">.DOCX</td></tr>
+<tr><td>E</td><td valign="bottom">Documento de Guía de Estilos</td><td valign="bottom">P</td><td valign="bottom">.DOCX</td></tr>
+<tr><td>E</td><td valign="bottom">Documento de Especificación de la BD</td><td valign="bottom">P</td><td valign="bottom">.DOCX</td></tr>
+<tr><td>E</td><td valign="bottom">Documento de Arquitectura del Software</td><td valign="bottom">P</td><td valign="bottom">.DOCX</td></tr>
+<tr><td>E</td><td valign="bottom">Reporte del Desarrollo del Software</td><td valign="bottom">P</td><td valign="bottom">.DOCX</td></tr>
+<tr><td>F</td><td valign="bottom">Reporte del Primer Sprint</td><td valign="bottom">P</td><td valign="bottom">.DOCX</td></tr>
+<tr><td>F</td><td valign="bottom">Reporte del Segundo Sprint</td><td valign="bottom">P</td><td valign="bottom"></td></tr>
+<tr><td>E</td><td valign="bottom">Manual de usuario</td><td valign="bottom">P</td><td valign="bottom">.DOCX</td></tr>
+<tr><td>E</td><td valign="bottom">Documento de Pruebas del Software</td><td valign="bottom">p</td><td valign="bottom">.DOCX</td></tr>
+<tr><td>F</td><td valign="bottom">Reporte del Tercer Sprint</td><td valign="bottom">P</td><td valign="bottom">.DOCX</td></tr>
+<tr><td>F</td><td valign="bottom">Acta de cierre del proyecto</td><td valign="bottom">P</td><td valign="bottom">.DOCX</td></tr>
 </table>
 
 
@@ -174,6 +175,12 @@ Por ejemplo, **“**EE-DN” es la forma en que la regla de asignación nos perm
 - **Regla N°2** : Cada línea base será denominada como LB (Acrónimo de Línea Base) seguido de su número correspondiente, por ejemplo:
 
 *LB1 = Línea Base 1*
+
+- **Regla N°3:** Las versiones y revisiones del documento se encontrarán dentro de cada uno en una tabla que especificará qué actualizaciones se han hecho hasta la fecha. Para identificar la versión y revisión utilizaremos identificadores numéricos separados por un punto; se presentaría de la siguiente forma:
+
+**Versión.Revisión**
+
+El número de versión cambiará cuando se modifique la arquitectura principal del ítem o cuando el ítem es completamente reconstruido. Asimismo, el número de revisión cambiará cuando el contenido haya cambiado pero no la estructura principal o el flujo del ítem.
 
 3.1.3. **Diseño de repositorio:**
 
