@@ -92,6 +92,15 @@ El propósito del proyecto es mejorar la eficiencia en el proceso de evaluación
 
 1.2. <a name="_heading=h.3gbxxmgeo82g"></a>**Glosario**
 
+- **Asistente Virtual:** Software que utiliza inteligencia artificial para simular una conversación con los usuarios, ayudándoles a realizar tareas específicas.
+- **Autoevaluación:** Proceso en el que los estudiantes evalúan su propio trabajo y desempeño utilizando criterios preestablecidos.
+- **Código de Recuperación:** Un código enviado al usuario para verificar su identidad cuando solicita cambiar su contraseña.
+- **Código de Validación:** Un código enviado al usuario para confirmar su dirección de correo electrónico durante el proceso de registro.
+- **Superadministrador:** Usuario con los más altos privilegios en la plataforma, capaz de gestionar todos los aspectos del sistema.
+- **API GPT:** Interfaz de programación de aplicaciones que permite la integración de la tecnología de procesamiento del lenguaje natural GPT (Generative Pre-trained Transformer) para realizar tareas específicas como la revisión automática de exámenes.
+- **Script:** Secuencia de comandos que automatiza tareas repetitivas en el sistema, como el envío de notificaciones.
+
+
 ### 2. Proceso: Registro y Autenticación de Usuarios
 
 #### 2.1 Ficha de Proceso
