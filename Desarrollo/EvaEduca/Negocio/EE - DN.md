@@ -182,17 +182,17 @@ El propósito del proyecto es mejorar la eficiencia en el proceso de evaluación
 
 |**ID**|**Actividad**|**Descripción** |**Rol**|**Tipo**|
 | :-: | :-: | :-: | :-: | :-: |
-|1|Inicio de sesión|El usuario inicia sesión en la plataforma. |Tester|Manual|
-|2|Verificar rol|Se verifica si tiene rol de superadministrador o administrador.|Analista funcional, Tester|Manual|
-|3|<p>Habilitar</p><p>administrador</p>|<p>De confirmarse el rol de superadministrador se le habilita la opción de Habilitar</p><p>administrador.</p>|Jefe de proyecto, DBA|Manual|
-|4|<p>Deshabilitar</p><p>administrador</p>|<p>De confirmarse el rol de superadministrador se le habilita la opción de Deshabilitar</p><p>administrador.</p>|Jefe de proyecto, DBA|Manual|
-|5|Eliminar administrador|De confirmarse el rol de superadministrador se le habilita la opción de Eliminar administrador.|Jefe de proyecto, DBA|Manual|
-|6|<p>Habilitar</p><p>profesor</p>|De confirmarse el rol de superadministrador o administrador se le habilita la opción de Habilitar profesor.|Analista funcional, Programador Backend|Manual|
-|7|<p>Deshabilitar</p><p>profesor</p>|De confirmarse el rol de superadministrador o administrador se le habilita la opción de Deshabilitar profesor.|Analista funcional, Programador Backend|Manual|
-|8|Eliminar profesor|De confirmarse el rol de superadministrador o administrador se le habilita la opción de Eliminar profesor.|Analista funcional, Programador Backend|Manual|
-|9|<p>Habilitar</p><p>alumno</p>|De confirmarse el rol de superadministrador o administrador se le habilita la opción de Habilitar alumno.|Analista funcional, Programador Frontend, Diseñador UX|Manual|
-|10|<p>Deshabilitar</p><p>alumno</p>|De confirmarse el rol de superadministrador o administrador se le habilita la opción de Deshabilitar alumno.|Analista funcional, Programador Frontend, Diseñador UX|Manual|
-|11|Eliminar alumno|De confirmarse el rol de superadministrador o administrador se le habilita la opción de Eliminar alumno.|Analista funcional, Programador Frontend, Diseñador UX|Manual|
+|1|Inicio de sesión|El usuario inicia sesión en la plataforma.|Usuario|Manual|
+|2|Verificar rol|Se verifica si tiene rol de superadministrador o administrador.|Sistema|Manual|
+|3|<p>Habilitar</p><p>administrador</p>|<p>De confirmarse el rol de superadministrador se le habilita la opción de Habilitar</p><p>administrador.</p>|Superadministrador|Manual|
+|4|<p>Deshabilitar</p><p>administrador</p>|<p>De confirmarse el rol de superadministrador se le habilita la opción de Deshabilitar</p><p>administrador.</p>|Superadministrador|Manual|
+|5|Eliminar administrador|De confirmarse el rol de superadministrador se le habilita la opción de Eliminar administrador.|Superadministrador|Manual|
+|6|<p>Habilitar</p><p>profesor</p>|De confirmarse el rol de superadministrador o administrador se le habilita la opción de Habilitar profesor.|Administrador|Manual|
+|7|<p>Deshabilitar</p><p>profesor</p>|De confirmarse el rol de superadministrador o administrador se le habilita la opción de Deshabilitar profesor.|Administrador|Manual|
+|8|Eliminar profesor|De confirmarse el rol de superadministrador o administrador se le habilita la opción de Eliminar profesor.|Administrador|Manual|
+|9|<p>Habilitar</p><p>alumno</p>|De confirmarse el rol de superadministrador o administrador se le habilita la opción de Habilitar alumno.|Administrador|Manual|
+|10|<p>Deshabilitar</p><p>alumno</p>|De confirmarse el rol de superadministrador o administrador se le habilita la opción de Deshabilitar alumno.|Administrador|Manual|
+|11|Eliminar alumno|De confirmarse el rol de superadministrador o administrador se le habilita la opción de Eliminar alumno.|Administrador|Manual|
 
 3. <a name="_heading=h.xi9ef7x2o3mu"></a>**Proceso: Gestión de Evaluación**
 
