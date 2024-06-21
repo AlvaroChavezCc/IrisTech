@@ -21,5 +21,6 @@ from django.urls import include, path
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('subirexamen/', include('SubirExamen.urls')),
+    path('subir-rubrica/', include('SubirRubrica.urls')),
     path('', views.index, name='index'),  # Ejemplo de una vista llamada 'index'
 ]
