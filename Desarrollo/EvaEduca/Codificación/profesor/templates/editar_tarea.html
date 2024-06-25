@@ -1,0 +1,14 @@
+<!-- editar_tarea.html -->
+
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <h1>Editar Tarea</h1>
+    
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Guardar cambios</button>
+        <a href="{% url 'tareas_curso' tarea.id_curso.id %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,14 @@
+<!-- crear_tarea.html -->
+
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <h1>Crear Nueva Tarea para el Curso "{{ curso.nombre }}"</h1>
+    
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Crear Tarea</button>
+        <a href="{% url 'tareas_curso' curso.id %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+{% endblock %}
