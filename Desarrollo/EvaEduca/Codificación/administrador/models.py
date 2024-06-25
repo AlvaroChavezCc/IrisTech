@@ -15,3 +15,10 @@ class curso(models.Model):
     descripcion = models.TextField()
     id_profesor = models.OneToOneField(profesor, on_delete=models.CASCADE)
     id_inst_ed = models.OneToOneField(institucion, on_delete=models.CASCADE)
+
+class tareas(models.Model):
+    id_curso = models.ForeignKey(curso, on_delete=models.CASCADE)
+    tema = models.CharField(max_length=100)
+    descripcion = models.TextField()
+    rubrica = models.FileField(upload_to='rubricas/')
+    archivo = models.FileField(upload_to='archivos/')
