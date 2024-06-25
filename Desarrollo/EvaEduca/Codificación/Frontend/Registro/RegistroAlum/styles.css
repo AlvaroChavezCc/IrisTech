@@ -1,0 +1,266 @@
+/* Estilos generales para la aplicación */
+
+/* Estilos para el header */
+header {
+    background-color: #008EDA; /* Color de fondo azul */
+    padding: 1rem; /* Padding interno de 1 rem */
+}
+/* Botón principal */
+.btn-primary {
+    background-color: #41C9E1; /* Azul principal */
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logo {
+    margin-right: 9rem;
+    height: auto;
+    width: auto;
+    max-height: fit-content;
+    max-width: 100%;
+}
+
+.btn-primary-is {
+    background-color: #41C9E1; /* Azul principal */
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    text-decoration: no-underline;
+    transition: background-color 0.3s ease;
+    width: 45%;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-primary-is:hover {
+    background-color: #008EDA; /* Azul oscuro al hacer hover */
+}
+
+.btn-primary:hover {
+    background-color: #008EDA; /* Azul oscuro al hacer hover */
+}
+
+.block-text {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #474747;
+}
+
+.block-text2 {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #474747;
+}
+
+.right-side h2 {
+    text-align: center; /* Centrar el título */
+}
+
+.right-side form {
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    margin-bottom: 1rem;    
+}
+
+.right-side form .mb-4 {
+    margin-bottom: 0.7rem; /* Espaciado entre campos del formulario */
+}
+
+.right-side form .mb-6 {
+    margin-bottom: 1.5rem; /* Espaciado entre campos del formulario */
+}
+
+.right-side form .bg-white {
+    background-color: #FAAC50; /* Fondo blanco para los campos de entrada */
+}
+
+.right-side form .rounded-lg {
+    border-radius: 8px; /* Bordes redondeados para los campos de entrada */
+}
+
+.right-side form .shadow-md {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera para los campos de entrada */
+}
+
+.right-side form input {
+    border-radius: 8px 0 0 8px; /* Bordes redondeados solo en la izquierda */
+}
+
+.right-side form span {
+    color: #000000; /* Color del texto en los iconos de entrada */
+    border-radius: 0 8px 8px 0; /* Bordes redondeados solo en la derecha */
+}
+
+.text-center{
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.right-side form button {
+    width: 50%; /* Botón ocupa todo el ancho */
+    border-radius: 8px; /* Bordes redondeados para el botón */
+    transition: background-color 0.3s ease; /* Transición suave en el hover */
+}
+
+
+/* Estilos adicionales para iconos */
+.fa {
+    font-size: 1rem; /* Tamaño base de iconos */
+    margin-right: 0.25rem; /* Espacio a la derecha de los iconos */
+}
+
+.left-side {
+    width: 50%;
+    background-color: #41C9E1; /* Fondo azul claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-side {
+    width: 50%;
+    background-color: #ace2e2; /* Fondo azul muy claro */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lgn {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.section {
+    text-align: center;
+}
+
+.profile-pic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.alumreg {
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.h3 {
+    margin-top: 1rem;
+    text-align: center;
+}
+/* Estilos para el pie de página */
+footer {
+    background-color: #000000; /* Fondo oscuro para el pie de página */
+    color: #ffffff; /* Texto gris claro */
+}
+
+footer a {
+    color: #ffffff; /* Enlaces en el pie de página */
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #41C9E1; /* Color más claro al hacer hover */
+}
+
+/* Estilos para la lista de enlaces en el pie de página */
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+
+.text-sm {
+    padding-top: 1rem;
+    margin-left: 4rem;
+}
+.img-responsive {
+    margin-left: 3rem;
+    padding: 0.5rem;
+}
+
+.text-lg {
+    padding-top: 2rem;
+}
+
+.text.xl{
+    padding-top: 2rem;
+    font-size: 1.5rem;
+}
+
+.text-oa{
+    padding-top: 2rem;
+    padding-right: 10rem;
+    font-size: 1.2rem;
+}
+
+.text-ns{
+    font-size: 0.9rem;
+}
+
+.btn-primary-ad{
+    background-color: #353839; /* Azul principal */
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary-ad:hover {
+    background-color: #008EDA; /* Azul oscuro al hacer hover */
+}
+
+.input-field-ad{
+    padding: 0.4rem;
+    border: 2px solid #FAAC50; /* Gris suave para borde */  
+    border-radius: 0.22rem;
+    width: 70%;
+    transition: border-color 0.3s ease;
+    margin-block: 1rem;
+}
+
+.input-field-ad:focus {
+    outline: none;
+    border-color: #008EDA /* Azul al enfocar */
+}
+
+
+/* Estilos para los iconos de redes sociales en el pie de página */
+footer .fab {
+    font-size: 1.5rem; /* Tamaño de iconos de redes sociales */
+    margin-right: 1rem; /* Espacio entre los iconos */
+}
+
+/* Estilos para los enlaces de navegación */
+nav a {
+    margin-left: 10rem; /* Margen izquierdo entre enlaces */
+    text-decoration: none; /* Sin subrayado en los enlaces */
+    font-size: 1rem; /* Tamaño de fuente 1 rem */
+}
+
+nav a:hover {
+    text-decoration: underline; /* Subrayado en hover */
+}
