@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eva Educa - Cursos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Profesor/styles.css">
+    <script>
+        function toggleDetails(element) {
+            const details = element.querySelector('.course-details');
+            const icon = element.querySelector('.toggle-icon');
+            if (details.style.display === "none") {
+                details.style.display = "block";
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                details.style.display = "none";
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+
+        function toggleSelectAll(checked) {
+            const checkboxes = document.querySelectorAll('.course-select');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = checked;
+            });
+            toggleButtons(checked);
+        }
+
+        function toggleButtons(checked) {
+            const buttons = document.querySelectorAll('.action-button');
+            buttons.forEach(button => {
+                button.disabled = !checked;
+            });
+        }
+
+        function handleCheckboxChange() {
+            const checkboxes = document.querySelectorAll('.course-select');
+            const anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+            toggleButtons(anyChecked);
+        }
+    </script>
+</head>
+<body class="font-roboto bg-gray-100">
+    <!-- Header -->
+    <header class="p-4 flex justify-between items-center">
+        <img src="../../img/logo.png" alt="Eva Educa Logo" class="h-12">
+        <button class="btn-primary">Cerrar sesión</button>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex">
+        <!-- Sidebar -->
+        <aside class="barra">
+            <div class="flex flex-col items-center">
+                <img src="https://placehold.co/100x100" alt="Foto de perfil de Ana María Rivera Cabrera" class="imguser">
+                <h2 class="text-xl font-bold text-blue-900">Ana María Rivera Cabrera</h2>
+                <p class="text-blue-700">@profesora</p>
+            </div>
+            <nav class="mt-8">
+                <ul class="space-y-4">
+                    <li>
+                        <a href="#" class="flex items-center text-lg text-white bg-blue-900 font-medium py-2 px-4 rounded">
+                            <i class="fas fa-chalkboard-teacher mr-2"></i> Cursos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center text-lg text-blue-900 font-medium hover:text-blue-700">
+                            <i class="fas fa-book mr-2"></i> Evaluaciones
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center text-lg text-blue-900 font-medium hover:text-blue-700">
+                            <i class="fas fa-user-shield mr-2"></i> Roles y permisos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center text-lg text-blue-900 font-medium hover:text-blue-700">
+                            <i class="fas fa-question-circle mr-2"></i> Q & A
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Content -->
+        <section class="fondo">
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-title">Cursos</h1>
+            </div>
+            <div class="relative mb-6">
+                <input type="text" placeholder="Buscar Cursos" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500">
+                <i class="fas fa-search absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            </div>
+            <table class="tabla">
+                <thead>
+                    <tr class="tabla-main">
+                        <th class="text-column">N°</th>
+                        <th class="text-column">Cursos</th>
+                        <th class="text-column">Clase</th>
+                        <th class="text-column">Alumnos</th>
+                        <th class="text-column">Seleccionar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-gray-200">
+                        <td class="p-4 text-center">001</td>
+                        <td class="p-4 text-center">Historia</td>
+                        <td class="p-4 text-center">5B</td>
+                        <td class="p-4 text-center text-blue-600">34 inscritos</td>
+                        <td class="p-4 text-center">
+                            <input type="checkbox" class="course-select" onclick="handleCheckboxChange()">
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-200">
+                        <td class="p-4 text-center">002</td>
+                        <td class="p-4 text-center">Literatura</td>
+                        <td class="p-4 text-center">5A</td>
+                        <td class="p-4 text-center text-blue-600">34 inscritos</td>
+                        <td class="p-4 text-center">
+                            <input type="checkbox" class="course-select" onclick="handleCheckboxChange()">
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-200">
+                        <td class="p-4 text-center">003</td>
+                        <td class="p-4 text-center">Comunicación</td>
+                        <td class="p-4 text-center">3C</td>
+                        <td class="p-4 text-center text-blue-600">34 inscritos</td>
+                        <td class="p-4 text-center">
+                            <input type="checkbox" class="course-select" onclick="handleCheckboxChange()">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="mt-4 flex justify-center space-x-4">
+                <button class="btn-green" disabled>
+                    Agregar alumnos <i class="fas fa-plus icon"></i>
+                </button>
+                <button class="btn-red" disabled>
+                    Eliminar alumnos <i class="fas fa-trash icon"></i>
+                </button>
+            </div>
+            <p class="mt-4 text-gray-600">Resultados 3 de 3</p>
+        </section>
+    </main>
+</body>
+</html>
