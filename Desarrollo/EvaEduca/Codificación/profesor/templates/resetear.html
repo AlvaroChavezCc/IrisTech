@@ -1,0 +1,21 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<h1 class="titulo-cursos">Resetear Usuario y Contraseña</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="id_usuario">Usuario</label>
+        {{ form.usuario }}
+    </div>
+    <div class="form-group">
+        <label for="id_contrasena">Contraseña</label>
+        {{ form.contrasena }}
+        {% if form.contrasena.errors %}
+            <small class="text-danger">{{ form.contrasena.errors }}</small>
+        {% endif %}
+    </div>
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+</form>
+{% endblock %}

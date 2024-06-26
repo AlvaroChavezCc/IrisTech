@@ -1,0 +1,65 @@
+/* Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    display: flex;
+    min-height: 100vh; /* Al menos ocupar toda la altura de la ventana */
+}
+
+.header {
+    background-color: #008EDA; /* Color de fondo deseado para el header */
+    color: white; /* Color del texto */
+    padding: 20px 0;
+    text-align: center;
+    width: 100%; /* Ocupar todo el ancho disponible */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombras en la parte inferior */
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    width: 200px; /* Ancho deseado para la barra de navegación */
+    background-color: #ACE2E2; /* Color de fondo para la barra de navegación */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Sombra opcional */
+    height: 100vh; /* Para que ocupe toda la altura de la ventana */
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #F7EEDD; /* Color rojo */
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar li {
+    margin-bottom: 10px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #008EDA; /* Color del texto */
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.navbar a:hover {
+    color: #ffffff;
+    background-color: #008EDA; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilos para el contenido principal */
+.content {
+    flex-grow: 1; /* Hacer que ocupe todo el espacio restante */
+    padding: 20px;
+}
