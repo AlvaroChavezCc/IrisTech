@@ -1,48 +1,64 @@
-<!-- tarea.html -->
-
 {% extends 'layouts/base.html' %}
-
 {% block content %}
-    <h1>Tareas del curso "{{ curso.nombre }}"</h1>
-    
+<h1 class="titulo-cursos">Tareas del curso "{{ curso.nombre }}"</h1>
+<div class="tareas">
     {% for tarea in tareas %}
-        <h2>Tarea: {{ tarea.tema }}</h2>
-        <p><strong>Descripción:</strong> {{ tarea.descripcion }}</p>
-        {% if tarea.rubrica %}
-            <p><strong>Rúbrica:</strong> <a href="{{ tarea.rubrica.url }}" download>Descargar Rúbrica</a></p>
-        {% endif %}
-        {% if tarea.archivo %}
-            <p><strong>Archivo de tarea:</strong> <a href="{{ tarea.archivo.url }}" download>Descargar Archivo</a></p>
-        {% endif %}
-        
-        <h3>Evaluaciones:</h3>
-        <ul>
-            {% for evaluacion in evaluaciones %}
-                {% if evaluacion.id_tarea == tarea %}
-                    <li>
-                        Alumno: {{ evaluacion.id_alumno.nombre }}<br>
-                        Archivo de evaluación: <a href="{{ evaluacion.file.url }}" download>Descargar evaluación</a><br>
-                        Subido el: {{ evaluacion.uploaded_at }}
-                    </li>
-                {% endif %}
-            {% empty %}
-                <li>No hay evaluaciones para esta tarea.</li>
-            {% endfor %}
-        </ul>
+        <div class="tarea">
+            <h2 class="tarea-header" onclick="toggleDetails(this)">
+                Tarea: {{ tarea.tema }}
+            </h2>
+            <div class="tarea-details">
+                <hr class="title-divider"> <!-- Línea negra horizontal para dividir el título del contenido -->
+                <p><strong>Descripción:</strong> {{ tarea.descripcion }}</p>
+                
+                <div class="btn-container-top">
+                    {% if tarea.rubrica %}
+                        <a href="{{ tarea.rubrica.url }}" download class="btn btn-blue">Descargar Rúbrica</a>
+                    {% endif %}
+                    {% if tarea.archivo %}
+                        <a href="{{ tarea.archivo.url }}" download class="btn btn-blue">Descargar Tarea</a>
+                    {% endif %}
+                </div>
+                
+                <!-- Botones de editar y eliminar -->
+                <div class="btn-container-bottom-left">
+                    <a href="{% url 'editar_tarea' tarea.id %}" class="btn btn-yellow">Editar Tarea</a>
+                    <form action="{% url 'eliminar_tarea' tarea.id %}" method="POST" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-red" onclick="return confirm('¿Estás seguro de que deseas eliminar esta tarea?');">Eliminar Tarea</button>
+                    </form>
+                </div>
 
-        <!-- Botones de editar y eliminar -->
-        <a href="{% url 'editar_tarea' tarea.id %}" class="btn btn-primary">Editar Tarea</a>
-        <form action="{% url 'eliminar_tarea' tarea.id %}" method="POST" style="display:inline;">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar esta tarea?');">Eliminar Tarea</button>
-        </form>
-
-        <!-- Botón de evaluar -->
-        <a href="{% url 'evaluar_tarea' tarea.id %}" class="btn btn-success">Evaluar Tarea</a>
+                <!-- Botón de evaluar -->
+                <div class="btn-container-bottom-right">
+                    <a href="{% url 'visualizar_evaluaciones' tarea.id %}" class="btn btn-green">Visualizar Evaluaciones</a>
+                </div>
+            </div>
+        </div>
     {% empty %}
         <p>No hay tareas para este curso.</p>
     {% endfor %}
+</div>
 
-    <!-- Botón para crear nueva tarea -->
-    <a href="{% url 'crear_tarea' curso.id %}" class="btn btn-success">Crear Nueva Tarea</a>
+<!-- Botón para crear nueva tarea -->
+<a href="{% url 'crear_tarea' curso.id %}" class="btn btn-green btn-create">Crear Nueva Tarea</a>
+
+<script>
+    function toggleDetails(header) {
+        var details = header.nextElementSibling;
+        if (details.style.display === "none" || details.style.display === "") {
+            details.style.display = "block";
+        } else {
+            details.style.display = "none";
+        }
+    }
+
+    // Inicializar todas las tareas para que sus detalles estén ocultos al inicio
+    document.addEventListener("DOMContentLoaded", function() {
+        var details = document.querySelectorAll('.tarea-details');
+        details.forEach(function(detail) {
+            detail.style.display = "none";
+        });
+    });
+</script>
 {% endblock %}

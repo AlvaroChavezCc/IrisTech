@@ -1,0 +1,54 @@
+.crear-tarea-form {
+    max-width: 600px; /* Ajusta el ancho máximo del formulario */
+    padding: 20px; /* Espaciado interno del formulario */
+    border: 1px solid #ccc; /* Borde del formulario */
+    border-radius: 4px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #fff; /* Fondo blanco */
+}
+
+.titulo-crear-tarea {
+    color: #008EDA; /* Color azul para el título */
+    border-bottom: 2px solid #868585; /* Línea inferior azul */
+    padding-bottom: 5px; /* Espacio adicional abajo del título */
+    margin-bottom: 10px; /* Margen inferior */
+}
+
+.container2 {
+    display: flex;
+    min-height: 70vh; /* Al menos ocupar toda la altura de la ventana */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Espacio entre cada campo del formulario */
+}
+
+.form-group label {
+    font-weight: bold; /* Texto de las etiquetas en negrita */
+}
+
+.form-group hr {
+    border: none;
+    border-top: 1px solid #ccc; /* Línea horizontal entre etiqueta y campo */
+    margin: 10px 0; /* Espacio alrededor de la línea */
+}
+
+.form-group input[type="text"],
+.form-group textarea,
+.form-group input[type="file"] {
+    width: 100%; /* Ajusta el ancho completo de los campos de texto y archivos */
+    padding: 10px; /* Espacio interno del campo */
+    border: 1px solid #ccc; /* Borde del campo */
+    border-radius: 4px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluye el padding y borde en el ancho total */
+    font-size: 16px; /* Tamaño de fuente */
+    margin-top: 5px; /* Espacio superior del campo */
+}
+
+.btn {
+    margin-right: 10px; /* Espacio entre botones */
+}
+
+.btn-secondary {
+    margin-right: 0; /* Ajuste para evitar margen adicional en el botón Cancelar */
+}
