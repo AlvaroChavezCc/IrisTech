@@ -1,0 +1,44 @@
+/* resetear.css */
+
+/* Estilo general para los campos de entrada */
+input[type="text"], input[type="password"], textarea {
+    background-color: #fff3cd; /* Fondo amarillo */
+    border: 1px solid #ccc; /* Borde del campo */
+    padding: 8px; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+    width: 100%; /* Ancho completo */
+    box-sizing: border-box; /* Incluir padding y borde en el ancho total */
+    margin-bottom: 10px; /* Espacio inferior */
+    font-size: 16px; /* Tamaño de fuente */
+    max-width: 400px; /* Ancho máximo para controlar el tamaño */
+}
+
+/* Estilo para el botón */
+.btn-primary {
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #fff; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border: none; /* Eliminar borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor tipo puntero al pasar */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Color de fondo del botón al pasar el ratón */
+}
+
+/* Estilo específico para los labels de usuario y contraseña */
+.form-group label {
+    margin-bottom: 5px; /* Espacio inferior */
+    display: block; /* Mostrar en bloque */
+    font-weight: bold; /* Texto en negrita */
+}
+
+.form-group label[for="id_usuario"] {
+    color: #008EDA; /* Color azul para el label de usuario */
+}
+
+.form-group label[for="id_contrasena"] {
+    color: #008EDA; /* Color azul para el label de contraseña */
+}
