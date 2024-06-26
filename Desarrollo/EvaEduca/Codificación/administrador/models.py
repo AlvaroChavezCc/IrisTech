@@ -13,8 +13,8 @@ class administrador(models.Model):
 class curso(models.Model):
     nombre = models.CharField(max_length=100)
     descripcion = models.TextField()
-    id_profesor = models.OneToOneField(profesor, on_delete=models.CASCADE)
-    id_inst_ed = models.OneToOneField(institucion, on_delete=models.CASCADE)
+    id_profesor = models.ForeignKey(profesor, on_delete=models.CASCADE)
+    id_inst_ed = models.ForeignKey(institucion, on_delete=models.CASCADE)
 
 class tareas(models.Model):
     id_curso = models.ForeignKey(curso, on_delete=models.CASCADE)
