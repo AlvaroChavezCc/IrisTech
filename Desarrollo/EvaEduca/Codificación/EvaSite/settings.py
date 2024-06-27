@@ -85,6 +85,11 @@ DATABASES = {
 }
 
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
@@ -119,8 +124,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static'
+# Lista de directorios donde Django buscará archivos estáticos
+STATICFILES_DIRS = [
+    BASE_DIR / 'media',  # Aquí debes poner la ruta donde tienes tus archivos estáticos (por ejemplo, 'static/styles/main.css')
+    ]
 
 # Configuración de archivos de medios
 MEDIA_URL = '/media/'
@@ -130,3 +139,4 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

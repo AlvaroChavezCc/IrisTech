@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargar Examen</title>
+    <!-- Enlace a tu archivo CSS si lo tienes -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Descargar Examen</h1>
+    </header>
+
+    <main>
+        <ul>
+            <!-- Aquí podrías generar dinámicamente los enlaces a cada examen -->
+            <li><a href="{% url 'descargar_examen' %}?examen_id=1">Examen 1</a></li>
+            <!-- Puedes agregar más exámenes aquí -->
+        </ul>
+    </main>
+
+    <footer>
+        <a href="{% url 'logout_alumno' %}">Cerrar sesión</a>
+    </footer>
+</body>
+</html>
