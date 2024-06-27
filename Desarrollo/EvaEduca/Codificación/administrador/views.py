@@ -5,12 +5,13 @@ from django.contrib import messages
 from .decorators import login_required
 from .models import administrador, curso
 from profesor.models import profesor
-from .forms import CursoForm, ProfesorForm, LoginForm
+from alumno.models import alumno
+from .forms import CursoForm, ProfesorForm, AlumnoForm, LoginForm
 
 # Vista de Redirección
 @login_required
 def home(request):
-    redirect('curso_list')
+    return redirect('curso_list')
 
 # Vistas de Login
 def login_view(request):
@@ -90,6 +91,7 @@ def curso_create(request):
         form = CursoForm()
     return render(request, 'curso_form.html', {'form': form})
 
+@login_required
 def curso_update(request, pk):
     curso_obj = get_object_or_404(curso, pk=pk)
     if request.method == 'POST':
@@ -108,3 +110,40 @@ def curso_delete(request, pk):
         curso_obj.delete()
         return redirect('curso_list')
     return render(request, 'curso_confirm_delete.html', {'curso': curso_obj})
+
+# Vistas de Alumno
+@login_required
+def alumno_list(request):
+    alumnos = alumno.objects.all()
+    return render(request, 'alumno_list.html', {'alumnos': alumnos})
+
+@login_required
+def alumno_create(request):
+    if request.method == 'POST':
+        form = AlumnoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('alumno_list')
+    else:
+        form = AlumnoForm()
+    return render(request, 'alumno_form.html', {'form': form})
+
+@login_required
+def alumno_update(request, pk):
+    alumno_obj = get_object_or_404(alumno, pk=pk)
+    if request.method == 'POST':
+        form = AlumnoForm(request.POST, instance=alumno_obj)
+        if form.is_valid():
+            form.save()
+            return redirect('alumno_list')
+    else:
+        form = AlumnoForm(instance=alumno_obj)
+    return render(request, 'alumno_form.html', {'form': form})
+
+@login_required
+def alumno_delete(request, pk):
+    alumno_obj = get_object_or_404(alumno, pk=pk)
+    if request.method == 'POST':
+        alumno_obj.delete()
+        return redirect('alumno_list')
+    return render(request, 'alumno_confirm_delete.html', {'alumno': alumno_obj})

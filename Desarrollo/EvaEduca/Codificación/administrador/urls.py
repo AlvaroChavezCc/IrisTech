@@ -16,4 +16,10 @@ urlpatterns = [
     path('cursos/nuevo/', views.curso_create, name='curso_create'),
     path('cursos/<int:pk>/editar/', views.curso_update, name='curso_update'),
     path('cursos/<int:pk>/eliminar/', views.curso_delete, name='curso_delete'),
+
+    # URLs de Alumno
+    path('alumnos/', views.alumno_list, name='alumno_list'),
+    path('alumnos/nuevo/', views.alumno_create, name='alumno_create'),
+    path('alumnos/<int:pk>/editar/', views.alumno_update, name='alumno_update'),
+    path('alumnos/<int:pk>/eliminar/', views.alumno_delete, name='alumno_delete'),
 ]
