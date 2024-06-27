@@ -1,29 +1,33 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .models import curso
+
+from .decorators import login_required
+from .models import administrador, curso
 from profesor.models import profesor
 from .forms import CursoForm, ProfesorForm, LoginForm
 
 # Vista de Redirección
+@login_required
 def home(request):
-    if not request.user.is_authenticated:
-        return redirect('login')
-    return redirect('curso_list')
+    redirect('curso_list')
 
 # Vistas de Login
 def login_view(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            user = authenticate(request, username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('curso_list')
-            else:
-                messages.error(request, 'Usuario o contraseña incorrectos')
+            usuario = form.cleaned_data['usuario']
+            contrasena = form.cleaned_data['contrasena']
+            try:
+                admin = administrador.objects.get(usuario=usuario)
+                if contrasena == admin.contrasena:
+                    request.session['administrador_id'] = admin.id
+                    return redirect('curso_list')
+                else:
+                    messages.error(request, 'Contraseña incorrecta')
+            except administrador.DoesNotExist:
+                messages.error(request, 'Usuario no encontrado')
     else:
         form = LoginForm()
     return render(request, 'login.html', {'form': form})
@@ -33,10 +37,12 @@ def logout_view(request):
     return redirect('login')
 
 # Vistas de Profesor
+@login_required
 def profesor_list(request):
     profesores = profesor.objects.all()
     return render(request, 'profesor_list.html', {'profesores': profesores})
 
+@login_required
 def profesor_create(request):
     if request.method == 'POST':
         form = ProfesorForm(request.POST)
@@ -47,6 +53,7 @@ def profesor_create(request):
         form = ProfesorForm()
     return render(request, 'profesor_form.html', {'form': form})
 
+@login_required
 def profesor_update(request, pk):
     profesor_obj = get_object_or_404(profesor, pk=pk)
     if request.method == 'POST':
@@ -58,6 +65,7 @@ def profesor_update(request, pk):
         form = ProfesorForm(instance=profesor_obj)
     return render(request, 'profesor_form.html', {'form': form})
 
+@login_required
 def profesor_delete(request, pk):
     profesor_obj = get_object_or_404(profesor, pk=pk)
     if request.method == 'POST':
@@ -66,10 +74,12 @@ def profesor_delete(request, pk):
     return render(request, 'profesor_confirm_delete.html', {'profesor': profesor_obj})
 
 # Vistas de Curso
+@login_required
 def curso_list(request):
     cursos = curso.objects.all()
     return render(request, 'curso_list.html', {'cursos': cursos})
 
+@login_required
 def curso_create(request):
     if request.method == 'POST':
         form = CursoForm(request.POST)
@@ -91,6 +101,7 @@ def curso_update(request, pk):
         form = CursoForm(instance=curso_obj)
     return render(request, 'curso_form.html', {'form': form})
 
+@login_required
 def curso_delete(request, pk):
     curso_obj = get_object_or_404(curso, pk=pk)
     if request.method == 'POST':

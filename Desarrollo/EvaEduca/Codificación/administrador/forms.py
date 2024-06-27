@@ -13,5 +13,5 @@ class CursoForm(forms.ModelForm):
         fields = ['nombre', 'descripcion', 'id_profesor', 'id_inst_ed']
 
 class LoginForm(forms.Form):
-    username = forms.CharField(max_length=100)
-    password = forms.CharField(widget=forms.PasswordInput)
+    usuario = forms.CharField(max_length=50, label='Usuario')
+    contrasena = forms.CharField(widget=forms.PasswordInput, label='Contraseña')
