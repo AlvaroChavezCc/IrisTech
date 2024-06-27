@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvaEduca - Administrador</title>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a href="{% url 'curso_list' %}">Cursos</a>
+                </li>
+                <li>
+                    <a href="{% url 'profesor_list' %}">Profesores</a>
+                </li>
+                <li>
+                    <a href="{% url 'alumno_list' %}">Alumnos</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <main class="content">
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+</body>
+</html>

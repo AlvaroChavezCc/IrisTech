@@ -3,19 +3,32 @@
 {% extends 'layouts/base.html' %}
 
 {% block content %}
-    <h1>Cursos Asignados</h1>
-    
-    <h2>Profesor: {{ profesor.nombre }}</h2>
+    <h1 class="titulo-cursos">Cursos asignados</h1>
 
-    <ul>
-        {% for curso in cursos %}
-            <li>
-                <strong>{{ curso.nombre }}</strong><br>
-                Descripción: {{ curso.descripcion }}<br>
-                <a href="{% url 'tareas_curso' curso.id %}" class="btn btn-primary">Tareas de curso</a>
-            </li>
-        {% empty %}
-            <li>No hay cursos asignados.</li>
-        {% endfor %}
-    </ul>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for curso in cursos %}
+                <tr>
+                    <td>{{ curso.id }}</td>
+                    <td>{{ curso.nombre }}</td>
+                    <td>{{ curso.descripcion }}</td>
+                    <td>
+                        <a href="{% url 'tareas_curso' curso.id %}" class="btn btn-primary">Visualizar tareas de curso</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No hay cursos asignados.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

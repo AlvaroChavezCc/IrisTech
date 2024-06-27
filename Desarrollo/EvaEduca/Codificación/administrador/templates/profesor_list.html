@@ -1,0 +1,22 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <h1>Profesores</h1>
+    <a href="{% url 'profesor_create' %}" class="btn btn-primary">Nuevo Profesor</a>
+    <ul>
+        {% for profesor in profesores %}
+            <li>
+                <strong>{{ profesor.nombre }}</strong><br>
+                Correo: {{ profesor.correo }}<br>
+                Usuario: {{ profesor.usuario }}<br>
+                <a href="{% url 'profesor_update' profesor.pk %}" class="btn btn-primary">Editar</a>
+                <form action="{% url 'profesor_delete' profesor.pk %}" method="POST" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este profesor?');">Eliminar</button>
+                </form>
+            </li>
+        {% empty %}
+            <li>No hay profesores disponibles.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

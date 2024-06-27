@@ -37,11 +37,10 @@ def logout_view(request):
 ##ChatGPT
 
 # Configuración del cliente OpenAI
-client = OpenAI(api_key="sk-proj-R7BupP9cHyeKpCArExsjT3BlbkFJttLk5J0HF7Gpbav87B2m")
+client = OpenAI(api_key="sk-proj-l1jhmQnVBraVxTpb83s7T3BlbkFJq2MorTJZCtPEqaS18uFI")
 
 def read_docx(file_path):
     # Función para leer archivos .docx
-    from docx import Document
     doc = Document(file_path)
     return "\n".join([para.text for para in doc.paragraphs])
 
@@ -51,7 +50,6 @@ def evaluate_tarea(request, tarea_id):
     
     # Leer la rúbrica y la evaluación del alumno
     rubrica_path = tarea_obj.rubrica.path
-    # Suponiendo que la rúbrica y la evaluación son archivos .docx
     rubrica_text = read_docx(rubrica_path)
     
     evaluaciones = evaluacion.objects.filter(id_tarea=tarea_obj)
@@ -72,13 +70,19 @@ def evaluate_tarea(request, tarea_id):
             ]
         )
         
-        resultado = response['choices'][0]['message']['content']
-        resultados.append({
-            'alumno': eval.id_alumno.nombre,
-            'resultado': resultado
-        })
+        if response and response.choices:
+            resultado = response.choices[0].message.content
+            resultados.append({
+                'alumno': eval.id_alumno.nombre,
+                'resultado': resultado
+            })
+        else:
+            resultados.append({
+                'alumno': eval.id_alumno.nombre,
+                'resultado': "No se pudo obtener una respuesta en este momento."
+            })
 
-    return render(request, 'evaluar_tarea.html', {
+    return render(request, 'evaluacion_result.html', {
         'tarea': tarea_obj,
         'resultados': resultados
     })
@@ -141,6 +145,12 @@ def crear_tarea(request, curso_id):
             'form': form,
             'curso': curso_obj
         })
+    
+@login_required
+def visualizar_evaluaciones(request, tarea_id):
+    tarea_obj = get_object_or_404(tareas, id=tarea_id)
+    evaluaciones = evaluacion.objects.filter(id_tarea=tarea_obj)
+    return render(request, 'visualizar_evaluaciones.html', {'tarea': tarea_obj, 'evaluaciones': evaluaciones})
 
 @login_required
 def resetear(request):

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVA Educa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../RegistroAlum/styles.css"> <!-- Enlace al archivo CSS personalizado -->
+</head>
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <!-- Header -->
+    <header class="bg-500 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <nav class="text-white text-xl ">
+                <a href="#" class="ml-4">Inicio</a>
+                <a href="#" class="ml-4">Tutorial</a>
+                <a href="#" class="ml-4">Eva</a>
+                <a href="#" class="ml-4">Miembros</a>
+                <a href="#" class="ml-4">Contáctanos</a>
+            </nav>
+            <div class="logo">
+                <img src="../../img/logo.png" alt="Logo de EVA Educa">
+            </div>
+            <div>
+                <a class="btn-primary" href="../Registerchoose/registerchoose.html">Regístrate</a>
+                <a class="btn-primary ml-2" href="../../Login/index.html">Iniciar sesión</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex justify-center" style="min-height: 80vh">
+            <!-- Image and Text -->
+            <div class="left-side">
+                <div class="profile-pic">
+                    <img src="../../img/alumnos.png" alt="Estudiantes" class="alumreg">
+                    <h3 class="text-xl font-bold text-blue-700 mt-4">Soy alumno</h3>
+                </div>
+            </div>
+            <!-- Registration Form -->
+            <div class="right-side">
+                <h2 class="text-2xl font-bold text-blue-700 mb-6">Regístrate</h2>
+                <form>
+                    <div class="mb-4">
+                        <label class="block-text" for="nombres">Nombres</label>
+                        <div class="flex items-center bg-white rounded-lg shadow-md">
+                            <input class="appearance-none border-none w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none" id="nombres" type="text" placeholder="Ana Maria">
+                            <span class="flex items-center px-3 text-gray-400"><i class="fas fa-user"></i></span>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block-text" for="apellidos">Apellidos</label>
+                        <div class="flex items-center bg-white rounded-lg shadow-md">
+                            <input class="appearance-none border-none w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none" id="apellidos" type="text" placeholder="Rivera Cabrera">
+                            <span class="flex items-center px-3 text-gray-400"><i class="fas fa-user-tag"></i></span>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block-text" for="correo">Correo electrónico</label>
+                        <div class="flex items-center bg-white rounded-lg shadow-md">
+                            <input class="appearance-none border-none w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none" id="correo" type="email" placeholder="example@gmail.com">
+                            <span class="flex items-center px-3 text-gray-400"><i class="fas fa-envelope"></i></span>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block-text" for="contraseña">Contraseña</label>
+                        <div class="flex items-center bg-white rounded-lg shadow-md">
+                            <input class="appearance-none border-none w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none" id="contraseña" type="password" placeholder="********">
+                            <span class="flex items-center px-3 text-gray-400"><i class="fas fa-lock"></i></span>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <a type="submit" class="btn-primary-is" href="../RegistroAlum/datosAlum.html">Siguiente</a>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-yc">¿Ya tienes una cuenta? <a href="../../Login/index.html" class="text-blue-500 hover:text-blue-700 text-decoration: underline"> Iniciar ahora </a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+<!-- Footer -->
+<footer class="bg-900 text-white py-8">
+    <div class="container mx-auto">
+        <div class="flex justify-between">
+            <div>
+                <h3 class="text-log font-bold mb-2"></h3>
+                <img class="img-responsive" src="../../img/logoblack.png" alt="Logo de EVA Educa">
+                <ul class="text-sm">
+                    <li> Condor Huauchaí, Frank </li>
+                    <li> Chávez Ccahuana, Álvaro </li>
+                    <li> Ayala Salvatiierra, Freddy</li>
+                    <li> Romani Moscoso, Anthony</li>
+                    <li> Roman Suyo, Andre </li>
+                    <li> Huaman Uriarte, Cesar </li>
+                    <li> Llana Osorio, Abigail </li>
+                    <li> Guzmán Romero, Diego </li>
+                    <li> Universidad Nacional Mayor de San Marcos</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-2">Nosotros</h3>
+                <ul class="text-ns">
+                    <li><a href="#">¿Quiénes somos?</a></li>
+                    <li><a href="#">Blog de Eva</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Donar</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-2">Contáctanos</h3>
+                <ul class="text-cn">
+                    <input type="email" name="email" id="email" class="input-field-ad" placeholder="tucorreo@gmail.com">
+                    <button type="submit" class="btn-primary-ad">Adquirir</button>
+                    <li>Recibirás nuestro e-book de la Guía de uso para 
+                        <br>profesores y alumnos.</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-oa font-bold mb-2">Obtén la aplicación</h3>
+                <ul class="text-oap">
+                    <li><a href="#"><img src="../../img/apple.png" alt="Descargar en Apple Store"></a></li>
+                    <li class="mt-2"><a href="#"><img src="../../img/google.png" alt="Entrar en Google Play"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-8 text-center text-sm">
+            <p>&copy; 2024. Eva Educa</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="#" class="text-gray-400 hover:text-gray-100"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-400 hover:text-gray-100"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-gray-100"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-gray-100"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>
