@@ -1,0 +1,55 @@
+/* curso.css */
+
+.table {
+    width: 100%;
+    border-spacing: 0; /* Eliminar el espacio entre las celdas */
+    margin-top: 20px;
+    border-collapse: separate; /* Asegura que los bordes redondeados sean visibles */
+    border-radius: 10px; /* Bordes circulares para toda la tabla */
+    overflow: hidden; /* Evita que los bordes redondeados se superpongan con el contenido */
+}
+
+.table th, .table td {
+    border: none; /* Eliminar el borde de las celdas */
+    padding: 12px 8px; /* Ajustar el padding de las celdas */
+    text-align: center; /* Centrar el texto en las celdas */
+    vertical-align: middle; /* Alinear el contenido verticalmente en el centro */
+}
+
+.table th {
+    background-color: #008EDA;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.table tbody tr {
+    background-color: #fff; /* Fondo blanco para todas las filas */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Fondo alternativo para filas pares */
+}
+
+.table tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+.table td a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.table td a:hover {
+    background-color: #0056b3;
+}
+
+.titulo-cursos {
+    color: #008EDA; /* Color azul para el título */
+    border-bottom: 2px solid #868585; /* Línea inferior azul */
+    padding-bottom: 5px; /* Espacio adicional abajo del título */
+    margin-bottom: 10px; /* Margen inferior */
+}
