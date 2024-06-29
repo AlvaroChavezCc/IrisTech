@@ -5,7 +5,7 @@ from profesor import views
 urlpatterns = [
     path('', views.inicio, name="profesor"),
     #Esto hace que se tome un valor buscado como parámetro (<int:id>).
-    path('login/', views.login_view, name='login'),
+    path('login/', views.login_view, name='login_p'),
     path('logout/', views.logout_view, name='logout'),
     path('resetear/', views.resetear, name="reset"),
     path('cursos/<int:curso_id>/tareas/', views.tareas_curso, name='tareas_curso'),

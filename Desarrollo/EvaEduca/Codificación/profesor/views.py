@@ -7,7 +7,7 @@ from alumno.models import evaluacion
 from profesor.forms import EditarTareaForm, LoginForm, ResetForm, crear_task
 from .models import profesor
 from administrador.models import curso, tareas
-from .decorators import login_required
+from .decorators import profesor_login_required
 from docx import Document
 # Create your views here.
 
@@ -28,11 +28,11 @@ def login_view(request):
                 messages.error(request, 'Usuario no encontrado')
     else:
         form = LoginForm()
-    return render(request, 'login.html', {'form': form})
+    return render(request, 'login_p.html', {'form': form})
 
 def logout_view(request):
     request.session.flush()  # Limpiar la sesión
-    return redirect('login')
+    return redirect('login_p')
 
 ##ChatGPT
 
@@ -44,7 +44,7 @@ def read_docx(file_path):
     doc = Document(file_path)
     return "\n".join([para.text for para in doc.paragraphs])
 
-@login_required
+@profesor_login_required
 def evaluate_tarea(request, tarea_id):
     tarea_obj = get_object_or_404(tareas, id=tarea_id)
     
@@ -90,7 +90,7 @@ def evaluate_tarea(request, tarea_id):
 
 ##ChatGPT
 
-@login_required
+@profesor_login_required
 def inicio(request):
     if 'profesor_id' in request.session:
         profesor_id = request.session['profesor_id']
@@ -99,16 +99,16 @@ def inicio(request):
             name = profesor_actual.nombre
         except profesor.DoesNotExist:
             print("Profesor no encontrado.")
-            return redirect('login')
+            return redirect('login_p')
     else:
         print("Profesor ID no encontrado en sesión.")
-        return redirect('login')
+        return redirect('login_p')
 
     return render(request, 'profesor.html', {
         'name': name
     })
 
-@login_required
+@profesor_login_required
 def tareas_curso(request, curso_id):
     curso_obj = get_object_or_404(curso, id=curso_id)
     tareas_curso = tareas.objects.filter(id_curso=curso_obj)
@@ -120,7 +120,7 @@ def tareas_curso(request, curso_id):
         'evaluaciones': evaluaciones_curso
     })
 
-@login_required
+@profesor_login_required
 def crear_tarea(request, curso_id):
     curso_obj = get_object_or_404(curso, id=curso_id)
     
@@ -146,13 +146,13 @@ def crear_tarea(request, curso_id):
             'curso': curso_obj
         })
     
-@login_required
+@profesor_login_required
 def visualizar_evaluaciones(request, tarea_id):
     tarea_obj = get_object_or_404(tareas, id=tarea_id)
     evaluaciones = evaluacion.objects.filter(id_tarea=tarea_obj)
     return render(request, 'visualizar_evaluaciones.html', {'tarea': tarea_obj, 'evaluaciones': evaluaciones})
 
-@login_required
+@profesor_login_required
 def resetear(request):
     profesor_id = request.session.get('profesor_id')
     profesor_obj = get_object_or_404(profesor, id=profesor_id)
@@ -170,7 +170,7 @@ def resetear(request):
         'form': form
     })
 
-@login_required
+@profesor_login_required
 def cursos(request):
     # Obtener el profesor actualmente autenticado
     profesor_id = request.session.get('profesor_id')
@@ -178,7 +178,7 @@ def cursos(request):
         profesor_actual = profesor.objects.get(id=profesor_id)
     except profesor.DoesNotExist:
         messages.error(request, 'No se encontró al profesor')
-        return redirect('login')
+        return redirect('login_p')
     
     # Obtener todos los cursos asignados a este profesor
     cursos_asignados = curso.objects.filter(id_profesor=profesor_actual)
@@ -188,7 +188,7 @@ def cursos(request):
         'cursos': cursos_asignados
     })
 
-@login_required
+@profesor_login_required
 def eliminar_tarea(request, tarea_id):
     tarea = get_object_or_404(tareas, id=tarea_id)
     curso_id = tarea.id_curso.id  # Guardar el curso_id antes de eliminar la tarea
@@ -196,7 +196,7 @@ def eliminar_tarea(request, tarea_id):
     messages.success(request, 'Tarea eliminada correctamente.')
     return redirect('tareas_curso', curso_id=curso_id)
 
-@login_required
+@profesor_login_required
 def editar_tarea(request, tarea_id):
     tarea = get_object_or_404(tareas, id=tarea_id)
     if request.method == 'POST':
