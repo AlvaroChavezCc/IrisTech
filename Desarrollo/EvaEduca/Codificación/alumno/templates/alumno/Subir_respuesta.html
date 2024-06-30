@@ -1,0 +1,21 @@
+<!-- formulario_carga_evaluacion.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cargar Evaluación</title>
+</head>
+<body>
+    <h1>Cargar Evaluación</h1>
+    {% if mensaje %}
+        <p>{{ mensaje }}</p>
+    {% endif %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Subir Evaluación</button>
+    </form>
+</body>
+</html>
+
+

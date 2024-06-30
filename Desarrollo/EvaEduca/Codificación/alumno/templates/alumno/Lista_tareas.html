@@ -1,0 +1,32 @@
+<!-- Plantilla para mostrar tareas con botones de descarga -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ÁREA DE DESCARGA</title>
+    <!-- Carga la etiqueta static -->
+    {% load static %}
+    <!-- Enlaza el archivo CSS externo -->
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+</head>
+<body>
+    <h1>ÁREA DE DESCARGA</h1>
+    {% for tarea in tareas %}
+        <div class="task-container">
+            <div class="task-content">
+                <h2>CURSO: {{ tarea.tema }}</h2>
+                <h3>{{ tarea.descripcion }}</h3>
+            </div>
+            <div class="container">
+                <!-- Botón de descarga junto al nombre de la tarea -->
+                <a href="{{ tarea.archivo.url }}" download>
+                    <button><class="download-button">Descargar</button>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+</body>
+</html>
+
+
+

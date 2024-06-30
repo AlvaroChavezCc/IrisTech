@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido</title>
+    {% load static %}
+    <!-- Incluir aquí tus estilos CSS si es necesario -->
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido</h1>
+        <div class="opciones">
+            <!-- Enlaces para redirigir a las zonas de descarga y carga -->
+            <a href="{% url 'lista_tareas' %}" class="boton">Ir a Zona de Descarga</a>
+            <a href="{% url 'subir_respuesta' %}" class="boton">Ir a Zona de Carga</a>
+        </div>
+    </div>
+</body>
+</html>
