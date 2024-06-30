@@ -1,0 +1,35 @@
+<!-- evaluar_manualmente.html -->
+
+{% extends 'layouts/base_p.html' %}
+
+{% block content %}
+    <h1 class="titulo-crear-tarea">Evaluar tarea manualmente</h1>
+
+    <div class="container2">
+        <form method="POST" enctype="multipart/form-data" class="crear-tarea-form">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="id_nota">Nota</label>
+                <hr>
+                {{ form.nota }}
+                {% if form.nota.errors %}
+                    <small class="text-danger">{{ form.nota.errors }}</small>
+                {% endif %}
+            </div>   
+            <div class="form-group">
+                <label for="id_respuesta">Respuesta</label>
+                <hr>
+                <textarea id="id_respuesta" name="respuesta" rows="20" class="form-control">{{ form.respuesta.value }}</textarea>
+                {% if form.respuesta.errors %}
+                    <small class="text-danger">{{ form.respuesta.errors }}</small>
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" class="btn btn-green">Guardar evaluación manual</button>
+                <a href="{% url 'visualizar_evaluaciones' evaluacion.id_tarea.id %}" class="btn btn-yellow">Cancelar</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'layouts/base_p.html' %}
+
+{% block content %}
+<h1>Atender Reclamo</h1>
+<h2>Alumno: {{ reclamo.id_alumno.nombre }}</h2>
+<h3>Nota: {{ reclamo.id_evaluacion.nota }}</h3>
+<h4>Descripcion del reclamo:</h4>
+<pre>{{ reclamo.descripcion }}</pre>
+<h4>Feedback de evaluación:</h4>
+<pre>{{ reclamo.id_evaluacion.respuesta }}</pre>
+
+<a href="{% url 'lista_reclamos' %}" class="btn btn-yellow">Regresar</a>
+<a href="{% url 'justificar_nota' reclamo.id %}" class="btn btn-green">Justificar nota</a>
+<a href="{% url 'modificar_nota' reclamo.id %}" class="btn btn-blue">Modificar nota</a>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'layouts/base_p.html' %}
+
+{% block content %}
+<h1>Lista de Reclamos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre del Alumno</th>
+            <th>Nombre del Curso</th>
+            <th>Tema de la Tarea</th>
+            <th>Archivo de la Evaluación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for reclamo in reclamos %}
+        <tr>
+            <td>{{ reclamo.id_alumno.nombre }}</td>
+            <td>{{ reclamo.id_evaluacion.id_curso.nombre }}</td>
+            <td>{{ reclamo.id_evaluacion.id_tarea.tema }}</td>
+            <td><a href="{{ reclamo.id_evaluacion.file.url }}" target="_blank">Descargar Archivo</a></td>
+            <td>
+                <a href="{% url 'atender_reclamo' reclamo.id %}" class="btn btn-primary">Atender Reclamo</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

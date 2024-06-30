@@ -3,8 +3,8 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib import messages
 from openai import OpenAI
 from EvaSite import settings
-from alumno.models import evaluacion
-from profesor.forms import EditarTareaForm, LoginForm, ResetForm, crear_task
+from alumno.models import evaluacion, reclamo
+from profesor.forms import EditarTareaForm, EvaluarManualmenteForm, JustificarNotaForm, LoginForm, ModificarNotaForm, ResetForm, crear_task
 from .models import profesor
 from administrador.models import curso, tareas
 from .decorators import profesor_login_required
@@ -52,7 +52,8 @@ def evaluate_tarea(request, tarea_id):
     rubrica_path = tarea_obj.rubrica.path
     rubrica_text = read_docx(rubrica_path)
     
-    evaluaciones = evaluacion.objects.filter(id_tarea=tarea_obj)
+    # Filtrar solo las evaluaciones que no han sido calificadas
+    evaluaciones = evaluacion.objects.filter(id_tarea=tarea_obj, nota__isnull=True)
     resultados = []
 
     for eval in evaluaciones:
@@ -60,33 +61,46 @@ def evaluate_tarea(request, tarea_id):
         eval_text = read_docx(eval_path)
         
         # Crear el prompt basado en la rúbrica y la evaluación del alumno
-        prompt = f"Rúbrica:\n{rubrica_text}\n\nEvaluación del alumno:\n{eval_text}\n\nProporcione una evaluación basada en la rúbrica proporcionada."
+        prompt = f"Rúbrica:\n{rubrica_text}\n\nEvaluación del alumno:\n{eval_text}\n\nProporcione una evaluación basada en la rúbrica proporcionada e incluya una línea clara con la nota en el formato 'Nota: X' donde X es un número del 0 al 20."
         
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": "Evalúa el siguiente trabajo del alumno basado en la rúbrica dada."},
+                {"role": "system", "content": "Evalúa el siguiente trabajo del alumno basado en la rúbrica dada y proporciona una nota del 0 al 20."},
                 {"role": "user", "content": prompt}
             ]
         )
         
         if response and response.choices:
             resultado = response.choices[0].message.content
+            
+            # Aquí asumimos que la nota se encuentra en una línea que dice "Nota: X" en el resultado
+            nota_line = next((line for line in resultado.split('\n') if "Nota:" in line), None)
+            nota = None
+            if nota_line:
+                try:
+                    nota = float(nota_line.split(':')[1].strip())
+                except ValueError:
+                    pass
+            
+            # Almacenar la nota y la respuesta en el modelo evaluacion
+            eval.nota = nota
+            eval.respuesta = resultado
+            eval.save()
+
             resultados.append({
                 'alumno': eval.id_alumno.nombre,
-                'resultado': resultado
+                'resultado': resultado,
+                'nota': nota
             })
         else:
             resultados.append({
                 'alumno': eval.id_alumno.nombre,
-                'resultado': "No se pudo obtener una respuesta en este momento."
+                'resultado': "No se pudo obtener una respuesta en este momento.",
+                'nota': None
             })
 
-    return render(request, 'evaluacion_result.html', {
-        'tarea': tarea_obj,
-        'resultados': resultados
-    })
-
+    return redirect('visualizar_evaluaciones', tarea_id=tarea_id)
 
 ##ChatGPT
 
@@ -150,7 +164,9 @@ def crear_tarea(request, curso_id):
 def visualizar_evaluaciones(request, tarea_id):
     tarea_obj = get_object_or_404(tareas, id=tarea_id)
     evaluaciones = evaluacion.objects.filter(id_tarea=tarea_obj)
-    return render(request, 'visualizar_evaluaciones.html', {'tarea': tarea_obj, 'evaluaciones': evaluaciones})
+    # Verificar si hay evaluaciones sin calificar
+    hay_evaluaciones_pendientes = evaluaciones.filter(nota__isnull=True).exists()
+    return render(request, 'visualizar_evaluaciones.html', {'tarea': tarea_obj, 'evaluaciones': evaluaciones, 'hay_evaluaciones_pendientes': hay_evaluaciones_pendientes})
 
 @profesor_login_required
 def resetear(request):
@@ -212,3 +228,96 @@ def editar_tarea(request, tarea_id):
         'form': form,
         'tarea': tarea
     })
+
+@profesor_login_required
+def ver_respuesta(request, evaluacion_id):
+    evaluacion_obj = get_object_or_404(evaluacion, id=evaluacion_id)
+    return render(request, 'ver_respuesta.html', {
+        'evaluacion': evaluacion_obj
+    })
+
+@profesor_login_required
+def evaluar_manualmente(request, evaluacion_id):
+    evaluacion_obj = get_object_or_404(evaluacion, id=evaluacion_id)
+    
+    if request.method == 'POST':
+        form = EvaluarManualmenteForm(request.POST)
+        if form.is_valid():
+            evaluacion_obj.nota = form.cleaned_data['nota']
+            evaluacion_obj.respuesta = form.cleaned_data['respuesta']
+            evaluacion_obj.save()
+            messages.success(request, 'Evaluación manual guardada correctamente.')
+            return redirect('visualizar_evaluaciones', tarea_id=evaluacion_obj.id_tarea.id)
+    else:
+        form = EvaluarManualmenteForm()
+    
+    return render(request, 'eval_man.html', {
+        'form': form,
+        'evaluacion': evaluacion_obj
+    })
+
+@profesor_login_required
+def lista_reclamos(request):
+    reclamos = reclamo.objects.filter(estado=True).select_related('id_alumno', 'id_evaluacion__id_curso', 'id_evaluacion__id_tarea')
+    context = {
+        'reclamos': reclamos
+    }
+    return render(request, 'lista_reclamos.html', context)
+
+@profesor_login_required
+def atender_reclamo(request, reclamo_id):
+    reclamo_obj = get_object_or_404(reclamo, id=reclamo_id)
+    context = {
+        'reclamo': reclamo_obj
+    }
+    return render(request, 'atender_reclamo.html', context)
+
+@profesor_login_required
+def justificar_nota(request, reclamo_id):
+    reclamo_obj = get_object_or_404(reclamo, id=reclamo_id)
+    
+    if request.method == 'POST':
+        form = JustificarNotaForm(request.POST)
+        if form.is_valid():
+            reclamo_obj.respuesta = form.cleaned_data['respuesta']
+            reclamo_obj.estado = False
+            reclamo_obj.save()
+            return redirect('lista_reclamos')
+    else:
+        form = JustificarNotaForm()
+    
+    context = {
+        'form': form,
+        'reclamo': reclamo_obj
+    }
+    return render(request, 'justificar_nota.html', context)
+
+@profesor_login_required
+def modificar_nota(request, reclamo_id):
+    reclamo_obj = get_object_or_404(reclamo, id=reclamo_id)
+    evaluacion_obj = reclamo_obj.id_evaluacion
+    
+    if request.method == 'POST':
+        form = ModificarNotaForm(request.POST)
+        if form.is_valid():
+            reclamo_obj.respuesta = form.cleaned_data['respuesta_reclamo']
+            reclamo_obj.estado = False
+            reclamo_obj.save()
+            
+            evaluacion_obj.nota = form.cleaned_data['nota']
+            evaluacion_obj.respuesta = form.cleaned_data['respuesta_evaluacion']
+            evaluacion_obj.save()
+            
+            return redirect('lista_reclamos')
+    else:
+        form = ModificarNotaForm(initial={
+            'nota': evaluacion_obj.nota,
+            'respuesta_evaluacion': evaluacion_obj.respuesta,
+            'respuesta_reclamo': reclamo_obj.respuesta,
+        })
+    
+    context = {
+        'form': form,
+        'reclamo': reclamo_obj
+    }
+    return render(request, 'modificar_nota.html', context)
