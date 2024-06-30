@@ -1,41 +1,69 @@
-/* Estilos para el contenedor principal */
+/* main.css */
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
 .container {
-    display: flex;
-}
-
-/* Estilos para la barra de navegación */
-.navbar {
-    width: 200px; /* Puedes ajustar este valor según tus necesidades */
-    background-color: #f4f4f4; /* Color de fondo para la barra de navegación */
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
-    height: 100vh; /* Para que ocupe toda la altura de la pantalla */
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Sombra opcional para darle un mejor aspecto */
+    background-color: #f0f0f0;
 }
 
-.navbar ul {
-    list-style-type: none;
-    padding: 0;
+/* Estilos para títulos y textos */
+h1 {
+    color: #333;
 }
 
-.navbar li {
-    margin-bottom: 10px;
+.mensaje p {
+    font-size: 18px;
+    color: #555;
 }
 
-.navbar a {
+/* Estilos para botones */
+.boton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
     text-decoration: none;
-    color: #333; /* Color del texto */
-    font-weight: bold;
-    display: block;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para opciones específicas */
+.opciones {
+    margin-top: 20px;
+}
+
+/* Estilos específicos para elementos relacionados con tareas */
+.task-container {
+    display: flex; /* Hace que los elementos dentro de .container se comporten como flexbox */
+    align-items: center; /* Alinea verticalmente los elementos */
+    padding: 10px; /* Ajusta el espaciado interior del contenedor */
+    border: 1px solid #ccc; /* Solo para visualización */
+}
+
+
+.task-content {
+        flex: 1;
+        margin-right: 1px; /* Espacio entre el texto y el botón */
+}
+
+.download-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
     padding: 10px;
-    border-radius: 4px;
-}
-
-.navbar a:hover {
-    background-color: #ddd; /* Color de fondo al pasar el mouse */
-}
-
-/* Estilos para el contenido principal */
-.content {
-    flex-grow: 1;
-    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }
