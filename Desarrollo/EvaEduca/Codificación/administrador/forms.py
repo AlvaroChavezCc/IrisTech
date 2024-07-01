@@ -13,10 +13,20 @@ class CursoForm(forms.ModelForm):
         model = curso
         fields = ['nombre', 'descripcion', 'id_profesor', 'id_inst_ed']
 
-class AlumnoForm(forms.ModelForm):  # Agrega el formulario para alumno
+class AlumnoForm(forms.ModelForm):
+    id_curso = forms.ModelMultipleChoiceField(
+        queryset=curso.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        label="Cursos"
+    )
+
     class Meta:
         model = alumno
         fields = ['nombre', 'correo', 'usuario', 'contrasena', 'id_curso', 'id_inst_ed']
+    
+    def __init__(self, *args, **kwargs):
+        super(AlumnoForm, self).__init__(*args, **kwargs)
+        self.fields['id_curso'].label_from_instance = lambda obj: obj.nombre
 
 class LoginForm(forms.Form):
     usuario = forms.CharField(max_length=50, label='Usuario')
