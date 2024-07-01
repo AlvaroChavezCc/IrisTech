@@ -8,6 +8,8 @@
 header {
     background-color: #F7EEDD; /* Color de fondo azul */
     padding: 1rem; /* Padding interno de 1 rem */
+    height: 74px;
+    justify-content: center;
 }
 /* Botón principal */
 .btn-primary {
@@ -54,6 +56,18 @@ header {
     background-color: #008EDA; /* Azul oscuro al hacer hover */
 }
 
+.fondoweb{
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+}
+
+.imgman{
+    width: auto;
+    height: 450px;
+}
+
 .block-text {
     display: block;
     margin-bottom: 1rem;
@@ -94,15 +108,23 @@ header {
 }
 
 .left-side {
-    width: 50%;
-    background-color: #41C9E1; /* Fondo azul claro */
+    width: 55%;
+    background-color: #ACE2E2; /* Fondo azul claro */
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left: 85px;
+    padding-right: 85px;
 }
 
+.info{
+    display: flex;
+    flex-direction: column;
+}
+
+
 .right-side {
-    width: 50%;
+    width: 45%;
     background-color: #ace2e2; /* Fondo azul muy claro */
     display: flex;
     flex-direction: column;

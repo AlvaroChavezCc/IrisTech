@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/styles.css"> <!-- Enlace al archivo CSS personalizado -->
+    <link rel="stylesheet" href="../Login/home.css"> <!-- Enlace al archivo CSS personalizado -->
 </head>
 
 <body class="font-nunito bg-[#FFFBF3]">
@@ -23,17 +23,17 @@
                 <a href="#" class="text-black">Contáctanos</a>
             </nav>
             <div class="logo">
-                <img src="../images/logo.png" alt="Logo de EVA Educa">
+                <img src="../img/logo.png" alt="Logo de EVA Educa">
             </div>
             <div>
-                <a class="btn-primary" href="../../Frontend/Registro/Registerchoose/registerchoose.html">Regístrate</a>
-                <a class="btn-primary ml-2" href="../../Frontend/Login/index.html">Iniciar sesión</a>
+                <a class="btn-primary" href="../Registro/Registerchoose/registerchoose.html">Regístrate</a>
+                <a class="btn-primary ml-2" href="../Login/index.html">Iniciar sesión</a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative bg-cover bg-center" style="background-image: url('https://placehold.co/1920x600');">
+    <section class="fondoweb" style="background-image: url('../img/web.png');">
         <div class="container mx-auto py-24">
             <div class="text-white text-center">
                 <h1 class="text-5xl font-bold">UNA NUEVA FORMA DE APRENDER CON <span class="text-blue-500">EVA</span></h1>
@@ -42,17 +42,23 @@
             </div>
         </div>
         <div class="absolute bottom-0 right-0 mb-4 mr-4">
-            <img src="https://placehold.co/100x100" alt="Eva Icon" class="w-24">
+            <img src="../img/evalog.png" alt="Eva Icon" class="w-24">
         </div>
     </section>
 
     <!-- Section 1 -->
-    <section class="bg-[#CBF3F0] py-12">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-6">Calificar demasiadas tareas ya <span class="text-blue-600">NO</span> será un problema</h2>
-            <p class="mb-6">EVAEduca te ofrece una nueva forma de calificar, simplemente introduce tus rúbricas del trabajo y deja que nuestro sistema te proporcione un feedback detallado para tus estudiantes en cuestión de segundos.</p>
-            <a href="#" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Comenzar ahora</a>
+    <section class="flex">
+        <div class="left-side">
+            <div class="info">
+                <h2 class="text-3xl font-bold mb-6">Calificar demasiadas tareas ya <span class="text-blue-600">NO</span> será un problema</h2>
+                <p class="mb-6">EVAEduca te ofrece una nueva forma de calificar, simplemente introduce tus rúbricas del trabajo y deja que nuestro sistema te proporcione un feedback detallado para tus estudiantes en cuestión de segundos.</p>
+                <a href="#" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Comenzar ahora</a>
+            </div>
         </div>
+        <div class="right-side">
+            <img src="../img/men-busy.png" alt="men-busy" class="imgman">
+        </div>
+        
     </section>
 
     <!-- Section 2 -->
