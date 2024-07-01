@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ajusta la altura del cuerpo al 100% del viewport height */
+    background-color: #FFFBF3; /* Color de fondo del cuerpo */
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: #008EDA;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative; /* Añadimos posición relativa para el header */
+}
+
+.logo {
+    display: inline-block;
+}
+
+.header-buttons {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.btn {
+    background-color: #ffffff;
+    color: #008EDA;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background-color: #006bb3;
+    color: #ffffff;
+}
+
+.main-content {
+    flex: 1; /* Esto hará que el contenido principal ocupe todo el espacio restante */
+    background-image: url("{% static 'images/Mask group.png' %}");
+    background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Asegura que ocupe toda la altura disponible */
+}
