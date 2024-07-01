@@ -1,0 +1,21 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <h1>Cursos</h1>
+    <a href="{% url 'curso_create' %}" class="btn btn-primary">Nuevo Curso</a>
+    <ul>
+        {% for curso in cursos %}
+            <li>
+                <strong>{{ curso.nombre }}</strong><br>
+                Descripción: {{ curso.descripcion }}<br>
+                <a href="{% url 'curso_update' curso.pk %}" class="btn btn-primary">Editar</a>
+                <form action="{% url 'curso_delete' curso.pk %}" method="POST" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este curso?');">Eliminar</button>
+                </form>
+            </li>
+        {% empty %}
+            <li>No hay cursos disponibles.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
