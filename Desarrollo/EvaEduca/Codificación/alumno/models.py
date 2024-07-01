@@ -11,7 +11,7 @@ class alumno(models.Model):
     correo = models.EmailField(unique=True)
     usuario = models.CharField(max_length=50)
     contrasena = models.CharField(max_length=100)
-    id_curso = models.ForeignKey(curso, on_delete=models.CASCADE)
+    id_curso = models.ManyToManyField(curso, through='AlumnoCurso')
     id_inst_ed = models.ForeignKey(institucion, on_delete=models.CASCADE)
 
 class evaluacion(models.Model):
@@ -29,3 +29,10 @@ class reclamo(models.Model):
     descripcion = models.TextField(null=True, blank=True)
     respuesta = models.TextField(null=True, blank=True)
     estado = models.BooleanField(default=True)
+
+class alumnoCurso(models.Model):
+    alumno = models.ForeignKey(alumno, on_delete=models.CASCADE)
+    curso = models.ForeignKey(curso, on_delete=models.CASCADE)
+    grado = models.CharField(max_length=50)
+    nivel = models.CharField(max_length=50)
+    seccion = models.CharField(max_length=50)
