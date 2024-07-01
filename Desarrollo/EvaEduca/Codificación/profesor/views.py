@@ -9,6 +9,7 @@ from .models import profesor
 from administrador.models import curso, tareas
 from .decorators import profesor_login_required
 from docx import Document
+from django.utils import timezone
 # Create your views here.
 
 def login_view(request):
@@ -21,7 +22,7 @@ def login_view(request):
                 user = profesor.objects.get(usuario=usuario)
                 if contrasena == user.contrasena:
                     request.session['profesor_id'] = user.id
-                    return redirect('profesor')
+                    return redirect('profesor_inicio')
                 else:
                     messages.error(request, 'Contraseña incorrecta')
             except profesor.DoesNotExist:
@@ -105,22 +106,26 @@ def evaluate_tarea(request, tarea_id):
 ##ChatGPT
 
 @profesor_login_required
-def inicio(request):
-    if 'profesor_id' in request.session:
-        profesor_id = request.session['profesor_id']
-        try:
-            profesor_actual = profesor.objects.get(id=profesor_id)
-            name = profesor_actual.nombre
-        except profesor.DoesNotExist:
-            print("Profesor no encontrado.")
-            return redirect('login_p')
-    else:
-        print("Profesor ID no encontrado en sesión.")
-        return redirect('login_p')
+def profesor_inicio(request):
+    profesor_id = request.session.get('profesor_id')
 
-    return render(request, 'profesor.html', {
-        'name': name
-    })
+    # Evaluaciones sin revisar (nota is null)
+    evaluaciones_sin_revisar = evaluacion.objects.filter(nota__isnull=True).count()
+
+    # Reclamos sin atender (estado is True)
+    reclamos_sin_atender = reclamo.objects.filter(estado=True).count()
+
+    # Últimas evaluaciones subidas hoy
+    hoy = timezone.now().date()
+    ultimas_evaluaciones = evaluacion.objects.filter(uploaded_at__date=hoy)
+
+    context = {
+        'evaluaciones_sin_revisar': evaluaciones_sin_revisar,
+        'reclamos_sin_atender': reclamos_sin_atender,
+        'ultimas_evaluaciones': ultimas_evaluaciones,
+    }
+
+    return render(request, 'profesor.html', context)
 
 @profesor_login_required
 def tareas_curso(request, curso_id):
@@ -172,19 +177,25 @@ def visualizar_evaluaciones(request, tarea_id):
 def resetear(request):
     profesor_id = request.session.get('profesor_id')
     profesor_obj = get_object_or_404(profesor, id=profesor_id)
-    
+
     if request.method == 'POST':
         form = ResetForm(request.POST, instance=profesor_obj)
         if form.is_valid():
-            form.save()
-            messages.success(request, 'Usuario y contraseña actualizados correctamente.')
+            # Guardar los cambios si se ha modificado algún campo
+            if form.cleaned_data['usuario']:
+                profesor_obj.usuario = form.cleaned_data['usuario']
+            if form.cleaned_data['contrasena']:
+                profesor_obj.contrasena = form.cleaned_data['contrasena']
+            profesor_obj.save()
+            messages.success(request, 'Usuario y/o contraseña actualizados correctamente.')
             return redirect('reset')
     else:
         form = ResetForm(instance=profesor_obj)
-    
+
     return render(request, 'resetear.html', {
         'form': form
     })
+
 
 @profesor_login_required
 def cursos(request):

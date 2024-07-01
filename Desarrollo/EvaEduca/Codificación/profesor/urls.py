@@ -3,10 +3,10 @@ from django.urls import path
 from profesor import views
 
 urlpatterns = [
-    path('', views.inicio, name="profesor"),
+    path('', views.profesor_inicio, name="profesor_inicio"),
     #Esto hace que se tome un valor buscado como parámetro (<int:id>).
     path('login/', views.login_view, name='login_p'),
-    path('logout/', views.logout_view, name='logout'),
+    path('logout/', views.logout_view, name='logout_p'),
     path('resetear/', views.resetear, name="reset"),
     path('cursos/<int:curso_id>/tareas/', views.tareas_curso, name='tareas_curso'),
     path('tareas/crear/<int:curso_id>/', views.crear_tarea, name='crear_tarea'),
