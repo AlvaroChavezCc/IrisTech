@@ -1,0 +1,14 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <h1 class="titulo-curso">{% if form.instance.pk %}Editar{% else %}Agregar{% endif %} Curso</h1>
+    
+    <form method="POST" class="form-curso">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="form-buttons">
+            <button type="submit" class="btn btn-success">{% if form.instance.pk %}Guardar{% else %}Agregar{% endif %} Curso</button>
+            <a href="{% url 'curso_list' %}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+{% endblock %}

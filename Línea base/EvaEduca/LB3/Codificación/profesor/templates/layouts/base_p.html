@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvaEduca - Profesores</title>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/cursos.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/tarea.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/crear_tarea.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/resetear.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <img src="{% static 'images/logo.png' %}" alt="EvaEduca Logo">
+    </div>
+    <div class="container">
+        <nav class="navbar">
+            {% if profesor_logueado %}
+                <div class="navbar-profesor-info">
+                    <i class="fas fa-user"></i>
+                    <h1 class="navbar-welcome1">{{ profesor_logueado.nombre }}</h1>
+                    <h1 class="navbar-welcome">@Profesor</h1>
+                </div>
+            {% endif %}
+            <ul>
+                <li>
+                    <a href="{% url 'profesor_inicio' %}">
+                        <i class="fas fa-home"></i> Inicio
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'cursos' %}">
+                        <i class="fas fa-book"></i> Cursos
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'lista_reclamos' %}">
+                        <i class="fas fa-exclamation-circle"></i> Reclamos
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'reset' %}">
+                        <i class="fas fa-cogs"></i> Ajustes
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'logout_p' %}">
+                        <i class="fas fa-right-from-bracket"></i> Salir
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <main class="content">
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends 'layouts/base_p.html' %}
+
+{% block content %}
+<div class="notificaciones">
+    <h2 class="titulo-cursos">Notificaciones</h2>
+
+    <div class="notificacion">
+        <p>Hay {{ evaluaciones_sin_revisar }} evaluacion(es) sin revisar</p>
+    </div>
+
+    <div class="notificacion">
+        <p>Hay {{ reclamos_sin_atender }} reclamo(s) sin atender</p>
+    </div>
+
+    <div class="notificacion">
+        <h3>Últimas evaluaciones subidas hoy:</h3>
+        <ul>
+            {% for evaluacion in ultimas_evaluaciones %}
+                <li>{{ evaluacion.id_alumno.nombre }} - {{ evaluacion.id_tarea.tema }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

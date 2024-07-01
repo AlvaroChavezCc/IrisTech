@@ -1,0 +1,39 @@
+{% extends 'layouts/base_p.html' %}
+
+{% block content %}
+<h1 class="titulo-cursos">Resetear Usuario y Contraseña</h1>
+
+<div class="container2">
+    <form method="POST" class="crear-tarea-form">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="id_usuario">Usuario</label>
+            <hr>
+            {{ form.usuario }}
+        </div>
+        
+        <div class="form-group">
+            <label for="id_contrasena">Nueva Contraseña</label>
+            <hr>
+            {{ form.contrasena }}
+            {% if form.contrasena.errors %}
+                <small class="text-danger">{{ form.contrasena.errors }}</small>
+            {% endif %}
+        </div>
+        
+        <div class="form-group">
+            <label for="id_confirmar_contrasena">Confirmar Nueva Contraseña</label>
+            <hr>
+            {{ form.confirmar_contrasena }}
+            {% if form.confirmar_contrasena.errors %}
+                <small class="text-danger">{{ form.confirmar_contrasena.errors }}</small>
+            {% endif %}
+        </div>
+        
+        <div class="form-group">
+            <button type="submit" class="btn btn-green">Actualizar</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

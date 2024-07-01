@@ -1,0 +1,6 @@
+.titulo-alumnos {
+    color: #008EDA; /* Color azul para el título */
+    border-bottom: 2px solid #868585; /* Línea inferior gris */
+    padding-bottom: 5px; /* Espacio adicional abajo del título */
+    margin-bottom: 10px; /* Margen inferior */
+}

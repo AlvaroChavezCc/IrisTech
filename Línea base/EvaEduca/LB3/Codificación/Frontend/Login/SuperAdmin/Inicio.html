@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .bg-beige-50 {
+            background-color: #F7EEDD;
+        }
+        .text-lightblue-500 {
+            color: #008EDA;
+        }
+    </style>
+</head>
+<body class="bg-beige-50">
+    <header class="p-4 flex justify-between items-center">
+        <img src="../img/logo.png" alt="Eva Educa Logo" class="h-12">
+        <button class="btn-primary">Cerrar sesión</button>
+    </header>
+    <main class="flex min-h-screen">
+        <aside class="barra min-h-screen">
+            <div class="flex flex-col text-center items-center  mb-6">
+                <img class="imguser" src="https://placehold.co/100x100" alt="Foto de perfil">
+                <h2 class="mt-4 font-bold">Álvaro Chávez Ccahuana</h2>
+                <p class="text-sm">@superadmin</p>
+            </div>
+            <nav class="slide">
+                <ul>
+                    <li class="mb-1">
+                        <a href="../templates/Inicio.html" class="selected">
+                            <i class="fas fa-home mr-2.5"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="../templates/IEduca.html" class="no-selected">
+                            <i class="fas fa-school mr-2"></i>
+                            Instituciones Educativas
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="../templates/rolesadmin.html" class="no-selected">
+                            <i class="fas fa-user-cog mr-2"></i>
+                            Roles y permisos
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="../templates/ajustes.html" class="no-selected">
+                            <i class="fas fa-cogs mr-2"></i>
+                            Ajustes
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="flex-1 p-8">
+            <section>
+                <h2 class="text-title">¡Bienvenido, Ana María Rivera Cabrera!</h2>
+                <div class="mb-8">
+                    <h3 class="text-subtitle text-lightblue-500">Lista de cuentas de Administrador</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full bg-white shadow-md rounded-lg">
+                            <thead class="tabla-main">
+                                <tr>
+                                    <th class="px-4 py-2">ID</th>
+                                    <th class="px-4 py-2">Nombres y Apellidos</th>
+                                    <th class="px-4 py-2">Email</th>
+                                    <th class="px-4 py-2">Institución Educativa</th>
+                                    <th class="px-4 py-2">Estado de cuenta</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2 text-center">1234</td>
+                                    <td class="px-4 py-2">Andres Oddy Ayala Morales</td>
+                                    <td class="px-4 py-2">admin@Email.com</td>
+                                    <td class="px-4 py-2">Saco Oliveros</td>
+                                    <td class="px-4 py-2 text-column"><span class="btn-estado">Habilitada</span></td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2 text-center">5678</td>
+                                    <td class="px-4 py-2">Mateo Cardenas Shing</td>
+                                    <td class="px-4 py-2">admin@Email.com</td>
+                                    <td class="px-4 py-2">Saco Oliveros</td>
+                                    <td class="px-4 py-2 text-column"><span class="btn-estado">Habilitada</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2 text-center">9123</td>
+                                    <td class="px-4 py-2">Lee Min Ho</td>
+                                    <td class="px-4 py-2">admin@Email.com</td>
+                                    <td class="px-4 py-2">Universidad Nacional de Seúl</td>
+                                    <td class="px-4 py-2 text-column"><span class="btn-estado-d">Deshabilitada</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-subtitle text-lightblue-500">Lista de Instituciones Educativas</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full bg-white shadow-md rounded-lg">
+                            <thead class="tabla-main">
+                                <tr>
+                                    <td class="px-4 py-2">Código</td>
+                                    <th class="px-4 py-2">Nombre</th>
+                                    <th class="px-4 py-2">Dirección</th>
+                                    <th class="px-4 py-2">Teléfono</th>
+                                    <th class="px-4 py-2">Email</th>
+                                    <th class="px-4 py-2">Director</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2">12345</td>
+                                    <td class="px-4 py-2">Colegio Nacional</td>
+                                    <td class="px-4 py-2">Av. Siempre Viva 123</td>
+                                    <td class="px-4 py-2">555-1234</td>
+                                    <td class="px-4 py-2">info@colegionacional.com</td>
+                                    <td class="px-4 py-2">Juan Perez</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2">54321</td>
+                                    <td class="px-4 py-2">Instituto Moderno</td>
+                                    <td class="px-4 py-2">Calle Falsa 456</td>
+                                    <td class="px-4 py-2">555-5678</td>
+                                    <td class="px-4 py-2">contacto@institutomoderno.com</td>
+                                    <td class="px-4 py-2">Maria Lopez</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2">67891</td>
+                                    <td class="px-4 py-2">Escuela Técnica</td>
+                                    <td class="px-4 py-2">Calle Luna 789</td>
+                                    <td class="px-4 py-2">555-9012</td>
+                                    <td class="px-4 py-2">admin@escuelatecnica.com</td>
+                                    <td class="px-4 py-2">Carlos Garcia</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </>
+</body>
+</html>
