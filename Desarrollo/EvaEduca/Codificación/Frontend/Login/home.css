@@ -6,7 +6,7 @@
 }
 /* Estilos para el header */
 header {
-    background-color: #008EDA; /* Color de fondo azul */
+    background-color: #F7EEDD; /* Color de fondo azul */
     padding: 1rem; /* Padding interno de 1 rem */
 }
 /* Botón principal */
@@ -227,8 +227,13 @@ footer .fab {
 }
 
 /* Estilos para los enlaces de navegación */
+nav{
+    margin-left: 1rem;
+    align-items: center;
+}
+
 nav a {
-    margin-left: 10rem; /* Margen izquierdo entre enlaces */
+    margin-left: 1.2rem; /* Margen izquierdo entre enlaces */
     text-decoration: none; /* Sin subrayado en los enlaces */
     font-size: 1rem; /* Tamaño de fuente 1 rem */
 }
