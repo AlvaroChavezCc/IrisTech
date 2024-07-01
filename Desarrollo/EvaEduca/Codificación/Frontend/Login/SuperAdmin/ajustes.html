@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajustes - Cambiar contraseña</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-beige-50">
+    <div class="flex min-h-screen">
+        <aside class="bg-lightblue-500 w-64 text-white p-6 flex flex-col items-center">
+            <div class="text-center mb-6">
+                <img class="w-24 h-24 rounded-full mx-auto" src="https://placehold.co/100x100" alt="Profile picture of Ana María Rivera Cabrera">
+                <h2 class="mt-4 font-bold">Ana María Rivera Cabrera</h2>
+                <p class="text-sm">@profesora</p>
+            </div>
+            <nav class="text-left w-full">
+                <ul>
+                    <li class="mb-4">
+                        <a href="#" class="flex items-center text-white">
+                            <i class="fas fa-home mr-2"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#" class="flex items-center text-white bg-blue-700 rounded py-2 px-3">
+                            <i class="fas fa-school mr-2"></i>
+                            Instituciones Educativas
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#" class="flex items-center text-white bg-blue-700 rounded py-2 px-3">
+                            <i class="fas fa-user-cog mr-2"></i>
+                            Roles y permisos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center text-white bg-blue-700 rounded py-2 px-3">
+                            <i class="fas fa-cogs mr-2"></i>
+                            Ajustes
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="flex-1 bg-beige-50 p-8">
+            <header class="flex justify-between items-center mb-8">
+                <h1 class="text-2xl font-bold text-lightblue-500">Ajustes</h1>
+                <button class="bg-lightblue-500 text-white py-2 px-4 rounded">Cerrar sesión</button>
+            </header>
+            <section>
+                <h2 class="text-xl font-bold text-lightblue-500 mb-6">Cambiar contraseña</h2>
+                <form>
+                    <div class="mb-4">
+                        <label for="current-password" class="block mb-2">Contraseña:</label>
+                        <input type="password" id="current-password" class="w-full py-2 px-4 border border-gray-300 rounded" value="**********">
+                    </div>
+                    <div class="mb-6">
+                        <label for="new-password" class="block mb-2">Contraseña nueva:</label>
+                        <input type="password" id="new-password" class="w-full py-2 px-4 border border-gray-300 rounded" value="**********">
+                    </div>
+                    <button type="submit" class="bg-lightblue-500 text-white py-2 px-4 rounded">Actualizar</button>
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
