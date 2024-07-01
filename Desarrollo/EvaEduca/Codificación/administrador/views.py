@@ -34,7 +34,7 @@ def login_view(request):
     return render(request, 'login.html', {'form': form})
 
 def logout_view(request):
-    logout(request)
+    request.session.flush()
     return redirect('login')
 
 # Vistas de Profesor
