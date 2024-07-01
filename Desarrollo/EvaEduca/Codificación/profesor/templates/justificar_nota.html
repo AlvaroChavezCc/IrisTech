@@ -1,0 +1,25 @@
+{% extends 'layouts/base_p.html' %}
+
+{% block content %}
+    <h1 class="titulo-crear-tarea">Justificar Nota</h1>
+
+    <div class="container2">
+        <form method="POST" class="crear-tarea-form">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="id_respuesta">Justificación de la Nota</label>
+                <hr> <!-- Línea horizontal -->
+                {{ form.respuesta }}
+                {% if form.respuesta.errors %}
+                    <small class="text-danger">{{ form.respuesta.errors }}</small>
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" class="btn btn-green">Finalizar</button>
+                <a href="{% url 'atender_reclamo' reclamo.id %}" class="btn btn-red">Cancelar</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

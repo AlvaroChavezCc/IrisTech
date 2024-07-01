@@ -63,3 +63,45 @@ body, html {
     flex-grow: 1; /* Hacer que ocupe todo el espacio restante */
     padding: 20px;
 }
+
+.navbar-profesor-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Ajusta el espaciado entre el ícono y la lista de navegación */
+}
+
+.navbar-profesor-info .fas {
+    font-size: 3em; /* Ajusta el tamaño del ícono */
+    margin-bottom: 0px; /* Espacio entre el ícono y el nombre */
+}
+
+.navbar-welcome1 {
+    font-size: 1.5em; /* Ajusta el tamaño del texto */
+    color: #008EDA;
+    margin-bottom: -20px; /* Espacio entre el nombre y el título "Profesor" */
+}
+
+.navbar-welcome {
+    font-size: 1.2em; /* Ajusta el tamaño del texto */
+    color: #41C9E1;
+    margin-bottom: -20px; /* Espacio entre el nombre y el título "Profesor" */
+}
+
+.notificaciones {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.notificacion {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.notificacion h3 {
+    margin-top: 0;
+}
