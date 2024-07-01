@@ -1,8 +1,7 @@
-from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from administrador.models import tareas
-from django.contrib.auth import authenticate, login, logout
 from .forms import LoginForm, EvaluacionForm
 from .models import alumno
 
@@ -49,8 +48,8 @@ def subir_respuesta(request):
     if request.method == 'POST':
         form = EvaluacionForm(request.POST, request.FILES)
         if form.is_valid():
-            # Obtener el ID del alumno actualmente autenticado
-            id_alumno_id = request.user.id  # Asumiendo que el usuario está autenticado
+            # Obtener el ID del alumno 
+            id_alumno_id =  request.session['alumno_id']  
             
             # Guardar la evaluación en la base de datos asignando id_alumno_id
             evaluacion_obj = form.save(commit=False)
@@ -61,7 +60,7 @@ def subir_respuesta(request):
     else:
         form = EvaluacionForm()
 
-    return render(request, 'alumno/Subir_respuesta.html', {'form': form})
+        return render(request, 'alumno/Subir_respuesta.html', {'form': form})
 
 
 
