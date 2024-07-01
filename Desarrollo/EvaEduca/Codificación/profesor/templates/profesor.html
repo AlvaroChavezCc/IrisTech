@@ -1,14 +1,24 @@
 {% extends 'layouts/base_p.html' %}
 
 {% block content %}
-<div class="welcome-section">
-    <h1 class="title">Bienvenido, Profesor {{name}}</h1>
-    <p class="subtitle">Estamos encantados de tenerte de vuelta.</p>
-</div>
+<div class="notificaciones">
+    <h2 class="titulo-cursos">Notificaciones</h2>
 
-<div class="info-section">
-    <h2 class="section-title">Información Importante</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio architecto laborum fuga voluptates voluptatem mollitia explicabo porro officiis et quam. Ipsa dolorem possimus quam voluptatibus perspiciatis nostrum in sit corrupti.</p>
-    <p>Accede a tus <a href="{% url 'cursos' %}" class="link">Cursos</a> para gestionar tus clases o ve a la <a href="{% url 'reset' %}" class="link">Página de Configuración</a> para cambiar tu usuario y contraseña.</p>
+    <div class="notificacion">
+        <p>Hay {{ evaluaciones_sin_revisar }} evaluacion(es) sin revisar</p>
+    </div>
+
+    <div class="notificacion">
+        <p>Hay {{ reclamos_sin_atender }} reclamo(s) sin atender</p>
+    </div>
+
+    <div class="notificacion">
+        <h3>Últimas evaluaciones subidas hoy:</h3>
+        <ul>
+            {% for evaluacion in ultimas_evaluaciones %}
+                <li>{{ evaluacion.id_alumno.nombre }} - {{ evaluacion.id_tarea.tema }}</li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>
 {% endblock %}
