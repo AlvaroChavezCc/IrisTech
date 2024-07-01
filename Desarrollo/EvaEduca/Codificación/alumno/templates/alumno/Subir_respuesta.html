@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Cargar Evaluación</title>
@@ -11,8 +11,51 @@
     {% endif %}
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
+        
+        {# Mostrar errores solo si show_errors es verdadero y el campo específico tiene errores #}
+        <div>
+            {% if show_errors %}
+                {% if form.file.errors %}
+                    {{ form.file.errors }}
+                {% endif %}
+            {% endif %}
+            {{ form.file }}
+        </div>
+        <div>
+            {% if show_errors %}
+                {% if form.id_curso.errors %}
+                    {{ form.id_curso.errors }}
+                {% endif %}
+            {% endif %}
+            {{ form.id_curso }}
+        </div>
+        <div>
+            {% if show_errors %}
+                {% if form.id_tarea.errors %}
+                    {{ form.id_tarea.errors }}
+                {% endif %}
+            {% endif %}
+            {{ form.id_tarea }}
+        </div>
+        
         <button type="submit">Subir Evaluación</button>
     </form>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursoSelect = document.getElementById('id_id_curso');
+            const tareaSelect = document.getElementById('id_id_tarea');
+
+            cursoSelect.addEventListener('change', function() {
+                // Si el curso se deja vacío, reiniciar el campo de tarea
+                if (!cursoSelect.value) {
+                    tareaSelect.value = '';  // Reset the tarea field
+                    tareaSelect.disabled = true;
+                } else {
+                    tareaSelect.disabled = false;
+                }
+                this.form.submit();
+            });
+        });
+    </script>
 </body>
 </html>
