@@ -1,0 +1,46 @@
+<!-- visualizar_evaluaciones.html -->
+
+{% extends 'layouts/base_p.html' %}
+
+{% block content %}
+    <h1 class="titulo-cursos">Evaluaciones para la tarea "{{ tarea.tema }}"</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Alumno</th>
+                <th>Subido el</th>
+                <th>Acciones</th>
+                <th>Calificación</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for evaluacion in evaluaciones %}
+                <tr>
+                    <td>{{ evaluacion.id_alumno.nombre }}</td>
+                    <td>{{ evaluacion.uploaded_at }}</td>
+                    <td>
+                        <a href="{{ evaluacion.file.url }}" download class="btn btn-primary">Descargar evaluación</a>
+                        {% if not evaluacion.nota %}
+                            <a href="{% url 'evaluar_tarea' tarea.id %}" class="btn btn-primary">Evaluar tarea IA</a>
+                            <a href="{% url 'evaluar_manualmente' evaluacion.id %}" class="btn btn-warning">Evaluar tarea manual</a>
+                        {% else %}
+                            <a href="{% url 'ver_respuesta' evaluacion.id %}" class="btn btn-secondary">Ver Respuesta</a>
+                        {% endif %}
+                    </td>
+                    <td>{{ evaluacion.nota }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No hay evaluaciones para esta tarea.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% if hay_evaluaciones_pendientes %}
+        <a href="{% url 'evaluar_todas' tarea.id %}" class="btn btn-green">Evaluar todas las evaluaciones</a>
+    {% endif %}
+
+    <a href="{% url 'tareas_curso' tarea.id_curso.id %}" class="btn btn-yellow">Regresar</a>
+{% endblock %}

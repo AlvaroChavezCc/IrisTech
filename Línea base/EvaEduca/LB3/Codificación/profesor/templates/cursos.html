@@ -1,0 +1,34 @@
+<!-- cursos.html -->
+
+{% extends 'layouts/base_p.html' %}
+
+{% block content %}
+    <h1 class="titulo-cursos">Cursos asignados</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for curso in cursos %}
+                <tr>
+                    <td>{{ curso.id }}</td>
+                    <td>{{ curso.nombre }}</td>
+                    <td>{{ curso.descripcion }}</td>
+                    <td>
+                        <a href="{% url 'tareas_curso' curso.id %}" class="btn btn-primary">Visualizar tareas de curso</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No hay cursos asignados.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
