@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Instituciones Educativas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css"> <!-- Enlace al archivo CSS personalizado -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .bg-beige-50 {
+            background-color: #F7EEDD;
+        }
+        .text-lightblue-500 {
+            color: #008EDA;
+        }
+    </style>
+</head>
+<body class="bg-beige-50">
+    <header class="p-4 flex justify-between items-center">
+        <img src="../img/logo.png" alt="Eva Educa Logo" class="h-12">
+        <button class="btn-primary">Cerrar sesión</button>
+    </header>
+    <main class="flex min-h-screen">
+        <aside class="barra min-h-screen">
+            <div class="flex flex-col text-center items-center  mb-6">
+                <img class="imguser" src="https://placehold.co/100x100" alt="Foto de perfil">
+                <h2 class="mt-4 font-bold">Álvaro Chávez Ccahuana</h2>
+                <p class="text-sm">@profesora</p>
+            </div>
+            <nav class="slide">
+                <ul>
+                    <li class="mb-1">
+                        <a href="../templates/Inicio.html" class="no-selected">
+                            <i class="fas fa-home mr-2"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="../templates/IEduca.html" class="selected">
+                            <i class="fas fa-school mr-2"></i>
+                            Instituciones Educativas
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="../templates/rolesadmin.html" class="no-selected">
+                            <i class="fas fa-user-cog mr-2"></i>
+                            Roles y permisos
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="../templates/ajustes.html" class="no-selected">
+                            <i class="fas fa-cogs mr-2"></i>
+                            Ajustes
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="flex-1 p-8">
+            <section>
+                <h1 class="text-2xl font-bold text-lightblue-500">Lista de Instituciones Educativas</h1>
+                <button class="bg-lightblue-500 text-white py-2 px-4 rounded">Cerrar sesión</button>
+            </header>
+            <section class="mb-8">
+                <button class="bg-lightblue-500 text-white py-2 px-4 rounded mb-4">+ Nueva Institución Educativa</button>
+                <div class="relative mb-6">
+                    <input type="text" class="w-full py-2 pl-10 pr-4 border border-gray-300 rounded" placeholder="Buscar Institución Educativa">
+                    <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+                <table class="w-full bg-white shadow rounded">
+                    <thead class="bg-lightblue-500 text-white">
+                        <tr>
+                            <th class="py-2 px-4">Acciones</th>
+                            <th class="py-2 px-4">ID</th>
+                            <th class="py-2 px-4">Nombre de la I.E.</th>
+                            <th class="py-2 px-4">Email</th>
+                            <th class="py-2 px-4">Afiliación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-t">
+                            <td class="py-2 px-4 text-center">
+                                <button class="text-lightblue-500"><i class="fas fa-edit"></i></button>
+                                <button class="text-red-500"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                            <td class="py-2 px-4 text-center">1234</td>
+                            <td class="py-2 px-4">Universidad Nacional de Ingeniería</td>
+                            <td class="py-2 px-4">nombredeIae@Email.com</td>
+                            <td class="py-2 px-4 text-center">
+                                <span class="bg-gray-200 text-gray-600 py-1 px-3 rounded-full">Básica</span>
+                            </td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="py-2 px-4 text-center">
+                                <button class="text-lightblue-500"><i class="fas fa-edit"></i></button>
+                                <button class="text-red-500"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                            <td class="py-2 px-4 text-center">5678</td>
+                            <td class="py-2 px-4">Saco Oliveros</td>
+                            <td class="py-2 px-4">nombredeIae@Email.com</td>
+                            <td class="py-2 px-4 text-center">
+                                <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full">Premium</span>
+                            </td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="py-2 px-4 text-center">
+                                <button class="text-lightblue-500"><i class="fas fa-edit"></i></button>
+                                <button class="text-red-500"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                            <td class="py-2 px-4 text-center">9123</td>
+                            <td class="py-2 px-4">Edelmira del Pando</td>
+                            <td class="py-2 px-4">nombredeIae@Email.com</td>
+                            <td class="py-2 px-4 text-center">
+                                <span class="bg-teal-200 text-teal-600 py-1 px-3 rounded-full">Anual</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <footer class="text-gray-500 text-sm">
+                Resultados 3 de 3
+            </footer>
+        </main>
+    </>
+</body>
+</html>

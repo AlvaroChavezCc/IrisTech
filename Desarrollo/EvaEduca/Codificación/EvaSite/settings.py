@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'alumno',
     'profesor',
     'superadmin',
+    'inicio',
 ]
 
 MIDDLEWARE = [
@@ -66,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'profesor.context_processors.profesor_context',
             ],
         },
     },

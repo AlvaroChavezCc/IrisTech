@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - EvaEduca</title>
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+</head>
+<body>
+    <div class="header">
+        <img src="{% static 'images/logo.png' %}" alt="EvaEduca Logo">
+    </div>
+    <div class="container">
+        <div class="left-side">
+            <!-- Aquí puedes definir la imagen de fondo si es necesario -->
+        </div>
+        <div class="right-side">
+            <h2>Iniciar Sesión</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_username">Usuario</label>
+                    {{ form.usuario }}
+                </div>
+                <div class="form-group">
+                    <label for="id_password">Contraseña</label>
+                    {{ form.contrasena }}
+                </div>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

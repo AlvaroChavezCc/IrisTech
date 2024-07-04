@@ -1,0 +1,13 @@
+<!-- ver_respuesta.html -->
+
+{% extends 'layouts/base_p.html' %}
+
+{% block content %}
+    <h1 class="titulo-cursos">Respuesta de la Evaluación</h1>
+
+    <h2>Alumno: {{ evaluacion.id_alumno.nombre }}</h2>
+    <h3>Nota: {{ evaluacion.nota }}</h3>
+    <pre>{{ evaluacion.respuesta }}</pre>
+
+    <a href="{% url 'visualizar_evaluaciones' evaluacion.id_tarea.id %}" class="btn btn-yellow">Regresar</a>
+{% endblock %}

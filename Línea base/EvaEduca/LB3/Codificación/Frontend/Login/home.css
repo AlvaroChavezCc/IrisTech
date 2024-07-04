@@ -1,0 +1,243 @@
+/* Estilos generales para la aplicación */
+.fondo {
+    background-color: #F7EEDD;
+    font: bold;
+
+}
+/* Estilos para el header */
+header {
+    background-color: #F7EEDD; /* Color de fondo azul */
+    padding: 1rem; /* Padding interno de 1 rem */
+}
+/* Botón principal */
+.btn-primary {
+    background-color: #41C9E1; /* Azul principal */
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logo {
+    margin-right: 9rem;
+    height: auto;
+    width: auto;
+    max-height: fit-content;
+    max-width: 100%;
+}
+
+.h-12 {
+    margin-left: 1.7rem;
+}
+
+.btn-primary-is {
+    background-color: #41C9E1; /* Azul principal */
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.btn-primary-is:hover {
+    background-color: #008EDA; /* Azul oscuro al hacer hover */
+}
+
+.btn-primary:hover {
+    background-color: #008EDA; /* Azul oscuro al hacer hover */
+}
+
+.block-text {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #474747;
+}
+
+.block-text2 {
+    display: block;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #474747;
+}
+
+.text-center{
+    padding-top: 1rem;
+    text-align: center;
+}
+/* Campo de entrada */
+.input-field {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #FAAC50; /* Gris suave para borde */
+    border-radius: 17px;
+    transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #008EDA /* Azul al enfocar */
+}
+
+/* Estilos adicionales para iconos */
+.fa {
+    font-size: 1rem; /* Tamaño base de iconos */
+    margin-right: 0.25rem; /* Espacio a la derecha de los iconos */
+}
+
+.left-side {
+    width: 50%;
+    background-color: #41C9E1; /* Fondo azul claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-side {
+    width: 50%;
+    background-color: #ace2e2; /* Fondo azul muy claro */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.space {
+    width: 100%;
+}
+
+.w-tc {
+    width: 62%;
+}
+
+.lgn {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.barra { 
+    background-color: #ACE2E2;
+    width: 20%;
+    min-height: 100vh;
+}
+
+.imguser{
+    margin-top: 2rem;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+/* Estilos para el pie de página */
+footer {
+    background-color: #000000; /* Fondo oscuro para el pie de página */
+    color: #ffffff; /* Texto gris claro */
+}
+
+footer a {
+    color: #ffffff; /* Enlaces en el pie de página */
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #41C9E1; /* Color más claro al hacer hover */
+}
+
+/* Estilos para la lista de enlaces en el pie de página */
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+.text-sm {
+    padding-top: 1rem;
+    margin-left: 1rem;
+}
+.img-responsive {
+    margin-left: 3rem;
+    padding: 0.5rem;
+}
+
+.text-lg {
+    padding-top: 2rem;
+}
+
+.user{
+    padding-top: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #0062da
+}
+
+.text-oa{
+    padding-top: 2rem;
+    padding-right: 10rem;
+    font-size: 1.2rem;
+}
+
+.text-ns{
+    font-size: 0.9rem;
+}
+
+.btn-primary-ad{
+    background-color: #353839; /* Azul principal */
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary-ad:hover {
+    background-color: #008EDA; /* Azul oscuro al hacer hover */
+}
+
+.input-field-ad{
+    padding: 0.4rem;
+    border: 2px solid #FAAC50; /* Gris suave para borde */  
+    border-radius: 0.22rem;
+    width: 70%;
+    transition: border-color 0.3s ease;
+    margin-block: 1rem;
+}
+
+.input-field-ad:focus {
+    outline: none;
+    border-color: #008EDA /* Azul al enfocar */
+}
+
+
+/* Estilos para los iconos de redes sociales en el pie de página */
+footer .fab {
+    font-size: 1.5rem; /* Tamaño de iconos de redes sociales */
+    margin-right: 1rem; /* Espacio entre los iconos */
+}
+
+/* Estilos para los enlaces de navegación */
+nav{
+    margin-left: 1rem;
+    align-items: center;
+}
+
+nav a {
+    margin-left: 1.2rem; /* Margen izquierdo entre enlaces */
+    text-decoration: none; /* Sin subrayado en los enlaces */
+    font-size: 1rem; /* Tamaño de fuente 1 rem */
+}
+
+nav a:hover {
+    text-decoration: underline; /* Subrayado en hover */
+}

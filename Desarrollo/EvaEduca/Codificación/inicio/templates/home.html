@@ -1,0 +1,178 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}">
+    <style>
+        /* Estilos para el menú desplegable */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-content a:hover {background-color: #f1f1f1}
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown:hover .btn {
+            background-color: #006bb3;
+            color: #ffffff;
+        }
+
+        /* Estilos para el texto encima de la imagen */
+        .text-overlay {
+            position: absolute;
+            top: 70%;
+            left: 85%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+            text-align: right;
+            font-size: 6rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            z-index: 1; /* Asegura que esté encima de la imagen */
+        }
+
+        /* Estilos para el footer */
+        footer {
+            background-color: #000000; /* Fondo oscuro para el pie de página */
+            color: #ffffff; /* Texto gris claro */
+            padding: 2rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        footer .footer-section {
+            width: 25%; /* Cada sección ocupa el 25% del ancho */
+            padding: 0 1rem;
+        }
+
+        footer h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #41C9E1; /* Color azul para los títulos */
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: #ffffff; /* Enlaces en el pie de página */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #41C9E1; /* Color más claro al hacer hover */
+        }
+
+        /* Estilos para los iconos de redes sociales en el pie de página */
+        footer .fab {
+            font-size: 1.5rem; /* Tamaño de iconos de redes sociales */
+            margin-right: 1rem; /* Espacio entre los iconos */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="{% static 'images/logo.png' %}" alt="EvaEduca Logo" class="logo">
+        <div class="header-buttons">
+            <div class="dropdown">
+                <button class="btn">Iniciar sesión</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'login_p' %}">Profesor</a>
+                    <a href="{% url 'login' %}">Administrador</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="text-overlay">
+            Una nueva <br>
+            forma de<br>
+            aprender<br>
+            con Eva
+        </div>
+        <img src="{% static 'images/Mask group.png' %}" alt="Imagen de Inicio" class="home-image">
+    </div>
+    <footer>
+        <div class="footer-section">
+            <h3>Equipo</h3>
+            <ul>
+                <li>Condor Huauchaí, Frank</li>
+                <li>Chávez Ccahuana, Álvaro</li>
+                <li>Ayala Salvatiierra, Freddy</li>
+                <li>Romani Moscoso, Anthony</li>
+                <li>Roman Suyo, Andre</li>
+                <li>Huaman Uriarte, Cesar</li>
+                <li>Llana Osorio, Abigail</li>
+                <li>Guzmán Romero, Diego</li>
+                <li>Universidad Nacional Mayor de San Marcos</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Nosotros</h3>
+            <ul>
+                <li><a href="#">¿Quiénes somos?</a></li>
+                <li><a href="#">Blog de Eva</a></li>
+                <li><a href="#">Preguntas Frecuentes</a></li>
+                <li><a href="#">Donar</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contáctanos</h3>
+            <ul>
+                <input type="email" name="email" id="email" class="input-field-ad" placeholder="tucorreo@gmail.com">
+                <button type="submit" class="btn-primary-ad">Adquirir</button>
+                <li>Recibirás nuestro e-book de la Guía de uso para<br>profesores y alumnos.</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Obtén la aplicación</h3>
+            <ul>
+                <li><a href="#"><img src="{% static 'images/apple.png' %}" alt="Descargar en Apple Store"></a></li>
+                <li class="mt-2"><a href="#"><img src="{% static 'images/google.png' %}" alt="Entrar en Google Play"></a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
+
+<script>
+    document.addEventListener("click", function(event) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show') && !openDropdown.parentNode.contains(event.target)) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    });
+</script>

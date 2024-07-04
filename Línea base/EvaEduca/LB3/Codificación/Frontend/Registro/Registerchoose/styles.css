@@ -1,0 +1,244 @@
+/* Estilos generales para la aplicación */
+
+/* Estilos para el header */
+header {
+    background-color: #008EDA; /* Color de fondo azul */
+    padding: 1rem; /* Padding interno de 1 rem */
+}
+/* Botón principal */
+.btn-primary {
+    background-color: #41C9E1; /* Azul principal */
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logo {
+    margin-right: 9rem;
+    height: auto;
+    width: auto;
+    max-height: fit-content;
+    max-width: 100%;
+}
+
+.btn-primary-is {
+    background-color: #41C9E1; /* Azul principal */
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-primary-is:hover {
+    background-color: #008EDA; /* Azul oscuro al hacer hover */
+}
+
+.btn-primary:hover {
+    background-color: #008EDA; /* Azul oscuro al hacer hover */
+}
+
+/* Estilos adicionales para iconos */
+.fa {
+    font-size: 1rem; /* Tamaño base de iconos */
+    margin-right: 0.25rem; /* Espacio a la derecha de los iconos */
+}
+
+.lgn {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #000000; /* Fondo oscuro para el pie de página */
+    color: #ffffff; /* Texto gris claro */
+}
+
+footer a {
+    color: #ffffff; /* Enlaces en el pie de página */
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #41C9E1; /* Color más claro al hacer hover */
+}
+
+/* Estilos para la lista de enlaces en el pie de página */
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+.text-sm {
+    padding-top: 1rem;
+    margin-left: 4rem;
+}
+.img-responsive {
+    margin-left: 3rem;
+    padding: 0.5rem;
+}
+
+.text-lg {
+    padding-top: 2rem;
+}
+
+.text-oa{
+    padding-top: 2rem;
+    padding-right: 10rem;
+    font-size: 1.2rem;
+}
+
+.text-ns{
+    font-size: 0.9rem;
+}
+
+.btn-primary-ad{
+    background-color: #353839; /* Azul principal */
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary-ad:hover {
+    background-color: #008EDA; /* Azul oscuro al hacer hover */
+}
+
+.input-field-ad{
+    padding: 0.4rem;
+    border: 2px solid #FAAC50; /* Gris suave para borde */  
+    border-radius: 0.22rem;
+    width: 70%;
+    transition: border-color 0.3s ease;
+    margin-block: 1rem;
+}
+
+.input-field-ad:focus {
+    outline: none;
+    border-color: #008EDA /* Azul al enfocar */
+}
+
+
+/* Estilos para los iconos de redes sociales en el pie de página */
+footer .fab {
+    font-size: 1.5rem; /* Tamaño de iconos de redes sociales */
+    margin-right: 1rem; /* Espacio entre los iconos */
+}
+
+/* Estilos para los enlaces de navegación */
+nav a {
+    margin-left: 10rem; /* Margen izquierdo entre enlaces */
+    text-decoration: none; /* Sin subrayado en los enlaces */
+    font-size: 1rem; /* Tamaño de fuente 1 rem */
+}
+
+nav a:hover {
+    text-decoration: underline; /* Subrayado en hover */
+}
+
+/*------------------------registerchoose--------------------------*/
+/* Main container */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ace2e2;
+    padding: 3rem 0;
+    height: 65vh;
+}
+
+/* Flex container for the two sections */
+.main-content {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+/* Individual section styling */
+.section {
+    text-align: center;
+}
+
+.section2 {
+    text-align: center;
+}
+
+.section .profile-pic {
+    background-color: #41C9E1;
+    border-radius: 60%;
+    padding: 3rem;
+    margin-right: 8rem;
+    size: 30px;
+}
+.section .profile-pic:hover {
+    background-color: #008EDA;
+}
+
+.section2 .profile-pic2 {
+    background-color: #41C9E1;
+    border-radius: 60%;
+    padding: 3rem;
+    margin-left: 8rem;
+}
+.section2 .profile-pic2:hover {
+    background-color: #008EDA;
+}
+
+.section img {
+    border-radius: 30%;
+    width: 12rem;
+    height: 12rem;
+}
+.section2 img {
+    border-radius: 30%;
+    width: 12rem;
+    height: 12rem;
+}
+
+.section h3 {
+    margin-top: 1.2rem;
+    padding-right: 10rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #1E40C5;
+}
+
+.section2 h3{
+    margin-top: 1.2rem;
+    padding-left: 8rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #1E40C5;
+}
+
+/* Button styling */
+.register {
+    margin-top: 1.5rem;
+    background-color: #faac50;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register:hover {
+    background-color: #008EDA;
+}
