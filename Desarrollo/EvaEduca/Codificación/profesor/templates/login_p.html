@@ -6,10 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - EvaEduca</title>
     <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+    <style>
+        .logo {
+            margin: 0 auto;
+        }
+
+        .btnp {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 5px 10px;
+            background-color: #41C9E1;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btnp:hover {
+            background-color: #e2e6ea;
+            border-color: #ddd;
+            color: #000;
+        }
+    </style>
 </head>
 <body>
     <div class="header">
         <img src="{% static 'images/logo.png' %}" alt="EvaEduca Logo">
+        <a href="{% url 'home' %}" class="btnp">Volver</a>
     </div>
     <div class="container">
         <div class="left-side">
